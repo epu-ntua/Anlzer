@@ -104,6 +104,7 @@ ENV/
 UIapp/uiTest.db
 
 .idea/*
+.idea\*
 *.db
 
 # sass
