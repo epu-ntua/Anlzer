@@ -1,0 +1,18 @@
+<div class="modal fade delete-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{% url 'report-delete' object.project.pk object.pk %}" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    {% with project_pk=object.project_id %}
+                        <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4><i class="fa fa-warning"></i> Are you absolutely sure you want to delete <a href="{% url 'report' project_pk object.pk%}" class="anlzer-yellow">{{ object.title }}</a> report of project <a href="{% url 'project' project_pk %}" class="anlzer-yellow">{{ object.project.title }}</a>  ? </h4>
+                    {% endwith %}
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn anlzer-btn anlzer-bg-danger"><i class="fa fa-trash"></i>Delete</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

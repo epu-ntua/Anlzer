@@ -1,0 +1,2 @@
+1) See the icon light up on input focus for tokenfields
+2) Add report count to home page latest projects

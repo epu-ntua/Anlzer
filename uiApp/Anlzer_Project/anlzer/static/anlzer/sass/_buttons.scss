@@ -1,0 +1,49 @@
+@import "variables";
+@import "_forms";
+
+.container .nav.navbar-nav {
+  .btn.anlzer-btn {
+    margin: 25px 15px 0 45px;
+  }
+}
+
+.container .btn.anlzer-btn,
+.btn.anlzer-btn {
+  & {
+    margin: 5px 25px;
+    background: $anlzer-yellow;
+    background-color: $anlzer-yellow;
+    padding: 10px 20px;
+    line-height: 1em;
+    border-radius: 3px;
+    color: white;
+    text-transform: none;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.38);
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    background: $anlzer-yellow-hover !important;
+    background-color: $anlzer-yellow-hover !important;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.38), inset 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &.anlzer-bg-danger {
+      @extend .anlzer-bg-danger
+  }
+
+  &.anlzer-bg-default {
+      @extend .anlzer-bg-default
+  }
+
+
+  i.fa {
+    margin-right: 10px;
+  }
+
+  &.btn-default {
+    border: none;
+    background: $anlzer-grey
+  }
+}

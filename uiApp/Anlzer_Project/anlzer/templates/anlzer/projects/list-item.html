@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<!-- Anlzr Project -->
+<figure class="effect-oscar wowload fadeInUp">
+    <div class="bg project-teaser"></div>
+    <figcaption>
+        <h4>{{ project.title }}</h4>
+        <h6>Created: {{ project.created_on|date:"j b Y"|title }}, at {{ project.created_on|time:"H:i" }}</h6>
+        <p><span>{{ project.description }}</span><br>
+        <a href="{% url 'project' project.pk %}" title="Enter">Enter Project</a></p>
+    </figcaption>
+</figure>
+<!-- Anlzr Project -->

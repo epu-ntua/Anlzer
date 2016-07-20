@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+
+{% block title %}Report Creation{% endblock %}
+{% block body_class %}report-creation-page{% endblock %}
+
+{% block css %}
+<!-- page specific stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/reports.scss' %}">
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'anlzer/css/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'anlzer/css/set.css' %}" />
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'anlzer/css/blueimp-gallery.min.css' %}">
+<!-- date range picker CSS -->
+<link rel="stylesheet" href="{% static 'anlzer/css/daterangepicker.css' %}">
+<!-- css that help with the tokenization of pages and hashtags -->
+<link rel="stylesheet" href="{% static 'anlzer/css/tokenfield-typeahead.css' %}">
+<link rel="stylesheet" href="{% static 'anlzer/css/bootstrap-tokenfield.css' %}">
+<!-- Bootstrap checkbox-switch CSS -->
+<link rel="stylesheet" href="{% static 'anlzer/css/bootstrap-switch.css' %}">
+
+{% endblock %}
+
+{% block navbar %}{% include 'anlzer/util/project-menu.html' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center col-md-10 col-md-offset-2">
+                Create a new Report
+                <a href="{% url 'reports' project.pk %}" class="btn anlzer-btn pull-right">View Reports</a>
+            </h2>
+            <div class="col-md-12">
+                <div class="stepwizard">
+                    <div class="stepwizard-row">
+                        <div class="stepwizard-step">
+                            <div class="btn wizard-btn active">1</div>
+                        </div>
+                        <div class="stepwizard-step">
+                            <div class="btn wizard-btn">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form data-project={{ project.pk }} method="post" autocomplete="off" class="animated bounceInDown report-creation-form anlzer-form text-center col-md-6 col-md-offset-3">
+            {% csrf_token %}
+            <div id="ReportCreationCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        {% include 'anlzer/reports/form-fields.html' with step1_fields='True' %}
+                        <button class="btn anlzer-btn text-center" data-target="#ReportCreationCarousel" data-slide="next"><i class="fa fa-arrow-right"></i>next</button>
+                        <div class="col-md-12">
+                            <p class="help-text live-text col-md-8 col-md-offset-2" style="margin-top: 25px;">
+                                Choosing "Live" will dynamically change the report's date range
+                                based on the execution time of the analysis
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <p class="font-20">
+                            In this step you must select a filter. The following result-filtering options are available:
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="col-md-12 source-option" id="use-project-sources"><span>No filters</span></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12 source-option " id="modify-project-sources"><span>Modify project's settings</span></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12 source-option" id="define-custom-sources"><span>Custom filters</span></div>
+                            </div>
+                        </div>
+                        {% include 'anlzer/reports/form-fields.html' with step2_fields="True" %}
+                        <button class="btn anlzer-btn anlzer-bg-default text-center" data-target="#ReportCreationCarousel" data-slide="prev"><i class="fa fa-arrow-left"></i>back</button>
+                        <button type="submit" class="btn anlzer-btn text-center"><i class="fa fa-check"></i>Create</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<!-- moment -->
+<script type="text/javascript" src="{% static 'anlzer/js/moment.min.js' %}"></script>
+<!-- date range picker -->
+<script type="text/javascript" src="{% static 'anlzer/js/daterangepicker.js' %}"></script>
+<!-- turns checkboxes to switches-->
+<script type="text/javascript" src="{% static 'anlzer/js/bootstrap-switch.min.js' %}"></script>
+<!-- wow script -->
+<script src="{% static 'anlzer/js/bootstrap-tokenfield.js' %}"></script>
+<!-- Step Wizard Script -->
+<script src="{% static 'anlzer/js/app/step-wizard.js' %}"></script>
+<!-- Converts select into Ul -->
+<script src="{% static 'anlzer/js/app/modules/select-to-ul.js' %}"></script>
+<!-- Custom page Script -->
+<script src="{% static 'anlzer/js/app/reports.js' %}"></script>
+{% endblock %}

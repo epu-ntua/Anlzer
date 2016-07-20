@@ -1,0 +1,119 @@
+/* variable definition */
+body.user-home-page {
+  background: url(../img/back2.jpg) right no-repeat fixed #fff;
+  background-color: #3e3e3e;
+  background-blend-mode: multiply; }
+
+body.user-home-page .container > .row:first-of-type {
+  padding-top: 15em; }
+
+body.user-home-page .container > .row:first-of-type h2 {
+  font: 300 4em Roboto, Arial, Helvetica;
+  color: #e89f10;
+  margin-bottom: 0; }
+
+body.user-home-page .container > .row:first-of-type h3 {
+  margin-top: 1em;
+  color: lightgrey; }
+
+body.user-home-page .container > .row:first-of-type .call-to-action {
+  border: 1px solid #e89f10;
+  color: #e89f10;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in; }
+
+body.user-home-page .container > .row:first-of-type .call-to-action:hover,
+body.user-home-page .container > .row:first-of-type .call-to-action.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ECB204; }
+
+body.user-home-page .project-drawer, body.user-home-page .project-drawer.closed {
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  top: 75px;
+  left: -20%;
+  background: #111;
+  z-index: 2000;
+  -webkit-transition: left 0.3s ease-out;
+  -moz-transition: left 0.3s ease-out;
+  -ms-transition: left 0.3s ease-out;
+  -o-transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out; }
+
+body.user-home-page .project-drawer.open {
+  left: 0; }
+
+body.user-home-page .project-drawer h2, body.user-home-page .project-drawer h3, body.user-home-page .project-drawer h4 {
+  color: #777777; }
+
+body.user-home-page .project-drawer .drawer-close {
+  padding: 6px 10px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -ms-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out; }
+
+body.user-home-page .project-drawer .drawer-close:hover {
+  background: rgba(255, 255, 255, 0.1); }
+
+body.user-home-page .project-drawer .latest-project,
+body.user-home-page .project-drawer a.latest-project {
+  padding: 25px 0;
+  background: transparent;
+  border-bottom: 1px solid #333;
+  font-size: 25px;
+  vertical-align: middle;
+  display: block;
+  color: #777777;
+  vertical-align: -webkit-baseline-middle; }
+
+body.user-home-page .project-drawer .latest-project:hover,
+body.user-home-page .project-drawer .latest-project:hover .project-icon,
+body.user-home-page .project-drawer a.latest-project:hover,
+body.user-home-page .project-drawer a.latest-project:hover .project-icon {
+  color: #e89f10; }
+
+body.user-home-page .project-drawer .latest-project:hover h6,
+body.user-home-page .project-drawer a.latest-project:hover h6 {
+  color: #777777; }
+
+body.user-home-page .project-drawer .latest-project .project-icon,
+body.user-home-page .project-drawer a.latest-project .project-icon {
+  margin-right: 25px;
+  position: relative;
+  top: -2px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+body.user-home-page .project-drawer .view-projects {
+  background: transparent;
+  border: 1px solid #e89f10;
+  color: #e89f10;
+  border-radius: 3px;
+  margin-top: 25px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+body.user-home-page .project-drawer .view-projects:hover {
+  background: rgba(255, 255, 255, 0.1); }
+
+/*# sourceMappingURL=/static/anlzer/sass/home-page.css.map */

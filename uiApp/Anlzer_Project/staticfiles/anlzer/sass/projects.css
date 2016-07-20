@@ -1,0 +1,396 @@
+/* variable definition */
+.stepwizard {
+  display: table;
+  width: 100%;
+  position: relative;
+  margin-top: 30px; }
+
+.stepwizard .stepwizard-row {
+  display: table-row; }
+
+.stepwizard .stepwizard-row::before {
+  top: 14px;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 1px;
+  background-color: grey;
+  z-order: 0; }
+
+.stepwizard .stepwizard-row .stepwizard-step {
+  display: table-cell;
+  text-align: center;
+  position: relative; }
+
+.stepwizard .stepwizard-row .stepwizard-step .btn.wizard-btn {
+  color: #ccc;
+  border: 1px solid grey;
+  background: #333;
+  border-radius: 50%;
+  padding: 20px 30px;
+  top: -15px;
+  position: relative;
+  font-size: 20px;
+  cursor: default; }
+
+.stepwizard .stepwizard-row .stepwizard-step .btn.wizard-btn.active {
+  background: #e89f10; }
+
+.stepwizard .stepwizard-row .stepwizard-step button[disabled] {
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important; }
+
+/* variable definition */
+form.anlzer-form input,
+form.anlzer-form textarea,
+form.anlzer-form select {
+  outline: 0;
+  border: none;
+  background: transparent;
+  box-shadow: 0 0 0 0;
+  border-bottom: 1px solid #C1C1C1 !important;
+  border-radius: 0;
+  color: grey;
+  font-weight: 300;
+  font-size: 20px;
+  overflow: hidden; }
+
+form.anlzer-form input:active, form.anlzer-form input:focus,
+form.anlzer-form textarea:active,
+form.anlzer-form textarea:focus,
+form.anlzer-form select:active,
+form.anlzer-form select:focus {
+  outline: none; }
+
+form.anlzer-form input:-webkit-autofill, form.anlzer-form input:-webkit-autofill:focus,
+form.anlzer-form textarea:-webkit-autofill,
+form.anlzer-form textarea:-webkit-autofill:focus,
+form.anlzer-form select:-webkit-autofill,
+form.anlzer-form select:-webkit-autofill:focus {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px white inset;
+  color: grey; }
+
+form.anlzer-form input[type=file],
+form.anlzer-form textarea[type=file],
+form.anlzer-form select[type=file] {
+  display: inline-block; }
+
+form.anlzer-form .label-icon {
+  margin-right: 25px;
+  border: 1px solid #C1C1C1;
+  border-radius: 50%;
+  padding: 8px 16px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+form.anlzer-form .label-icon.focus {
+  border-color: #e89f10;
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none; }
+
+form.anlzer-form .label-icon i.fa {
+  color: #777777; }
+
+form.anlzer-form ul.errorlist li,
+form.anlzer-form .django-form-error {
+  color: #D90000;
+  list-style: none; }
+
+form.anlzer-form select:not([multiple]) {
+  width: 260px;
+  color: #333333; }
+
+form.anlzer-form select:not([multiple]) option {
+  color: #333333; }
+
+form.anlzer-form select:not([multiple]) option:focus, form.anlzer-form select:not([multiple]) option:active, form.anlzer-form select:not([multiple]) option:visited, form.anlzer-form select:not([multiple]) option:checked {
+  background: #e89f10;
+  color: white; }
+
+form.anlzer-form select[multiple],
+form.anlzer-form select[multiple].input-lg,
+form.anlzer-form ul.ul-from-select {
+  border: none;
+  height: 70px;
+  padding-bottom: 10px; }
+
+form.anlzer-form select[multiple] li,
+form.anlzer-form select[multiple] option,
+form.anlzer-form select[multiple].input-lg li,
+form.anlzer-form select[multiple].input-lg option,
+form.anlzer-form ul.ul-from-select li,
+form.anlzer-form ul.ul-from-select option {
+  color: whitesmoke;
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #e89f10;
+  background: rgba(255, 255, 255, 0.05);
+  margin-right: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+form.anlzer-form select[multiple] li:last-of-type,
+form.anlzer-form select[multiple] option:last-of-type,
+form.anlzer-form select[multiple].input-lg li:last-of-type,
+form.anlzer-form select[multiple].input-lg option:last-of-type,
+form.anlzer-form ul.ul-from-select li:last-of-type,
+form.anlzer-form ul.ul-from-select option:last-of-type {
+  margin-right: 0; }
+
+form.anlzer-form select[multiple] li:hover,
+form.anlzer-form select[multiple] option:hover,
+form.anlzer-form select[multiple].input-lg li:hover,
+form.anlzer-form select[multiple].input-lg option:hover,
+form.anlzer-form ul.ul-from-select li:hover,
+form.anlzer-form ul.ul-from-select option:hover {
+  background: rgba(255, 255, 255, 0.1); }
+
+form.anlzer-form select[multiple] li:focus, form.anlzer-form select[multiple] li:active, form.anlzer-form select[multiple] li:visited, form.anlzer-form select[multiple] li:checked, form.anlzer-form select[multiple] li[data-selected="selected"], form.anlzer-form select[multiple] li.active-select,
+form.anlzer-form select[multiple] option:focus,
+form.anlzer-form select[multiple] option:active,
+form.anlzer-form select[multiple] option:visited,
+form.anlzer-form select[multiple] option:checked,
+form.anlzer-form select[multiple] option[data-selected="selected"],
+form.anlzer-form select[multiple] option.active-select,
+form.anlzer-form select[multiple].input-lg li:focus,
+form.anlzer-form select[multiple].input-lg li:active,
+form.anlzer-form select[multiple].input-lg li:visited,
+form.anlzer-form select[multiple].input-lg li:checked,
+form.anlzer-form select[multiple].input-lg li[data-selected="selected"],
+form.anlzer-form select[multiple].input-lg li.active-select,
+form.anlzer-form select[multiple].input-lg option:focus,
+form.anlzer-form select[multiple].input-lg option:active,
+form.anlzer-form select[multiple].input-lg option:visited,
+form.anlzer-form select[multiple].input-lg option:checked,
+form.anlzer-form select[multiple].input-lg option[data-selected="selected"],
+form.anlzer-form select[multiple].input-lg option.active-select,
+form.anlzer-form ul.ul-from-select li:focus,
+form.anlzer-form ul.ul-from-select li:active,
+form.anlzer-form ul.ul-from-select li:visited,
+form.anlzer-form ul.ul-from-select li:checked,
+form.anlzer-form ul.ul-from-select li[data-selected="selected"],
+form.anlzer-form ul.ul-from-select li.active-select,
+form.anlzer-form ul.ul-from-select option:focus,
+form.anlzer-form ul.ul-from-select option:active,
+form.anlzer-form ul.ul-from-select option:visited,
+form.anlzer-form ul.ul-from-select option:checked,
+form.anlzer-form ul.ul-from-select option[data-selected="selected"],
+form.anlzer-form ul.ul-from-select option.active-select {
+  background: #e89f10;
+  color: white; }
+
+form.anlzer-form select[multiple] li[data-selected="selected"]:hover, form.anlzer-form select[multiple] li.active-select:hover,
+form.anlzer-form select[multiple] option[data-selected="selected"]:hover,
+form.anlzer-form select[multiple] option.active-select:hover,
+form.anlzer-form select[multiple].input-lg li[data-selected="selected"]:hover,
+form.anlzer-form select[multiple].input-lg li.active-select:hover,
+form.anlzer-form select[multiple].input-lg option[data-selected="selected"]:hover,
+form.anlzer-form select[multiple].input-lg option.active-select:hover,
+form.anlzer-form ul.ul-from-select li[data-selected="selected"]:hover,
+form.anlzer-form ul.ul-from-select li.active-select:hover,
+form.anlzer-form ul.ul-from-select option[data-selected="selected"]:hover,
+form.anlzer-form ul.ul-from-select option.active-select:hover {
+  background: #ECB204 !important;
+  background-color: #ECB204 !important;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.38), inset 0 0 6px rgba(0, 0, 0, 0.48); }
+
+form.anlzer-form select:-internal-list-box option:checked {
+  background-color: #e89f10 !important; }
+
+form.anlzer-form .help-text {
+  font-size: 12px;
+  color: #e89f10; }
+
+form.anlzer-form .bootstrap-switch,
+form.anlzer-form .bootstrap-switch-handle-off,
+form.anlzer-form .bootstrap-switch-handle-off:focus,
+form.anlzer-form .bootstrap-switch:focus {
+  border: none;
+  outline: none; }
+
+form.anlzer-form .bootstrap-switch.bootstrap-switch-wrapper {
+  margin-left: 30px;
+  margin-right: 85px; }
+
+form.anlzer-form .bootstrap-switch.bootstrap-switch-focused {
+  box-shadow: none; }
+
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+  color: #fff;
+  background: #e89f10; }
+
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+  color: #000;
+  background: #777777; }
+
+body.projects-page,
+body.project-creation-page,
+body.project-training-page,
+body.project-update-page {
+  background: url(../img/lab.jpg) right no-repeat fixed #fff;
+  background-color: grey;
+  background-blend-mode: multiply; }
+
+body.projects-page .container .row:first-child, body.projects-page .container .row:first-child h1, body.projects-page .container .row:first-child h2, body.projects-page .container .row:first-child h3, body.projects-page .container .row:first-child h4,
+body.project-creation-page .container .row:first-child,
+body.project-creation-page .container .row:first-child h1,
+body.project-creation-page .container .row:first-child h2,
+body.project-creation-page .container .row:first-child h3,
+body.project-creation-page .container .row:first-child h4,
+body.project-training-page .container .row:first-child,
+body.project-training-page .container .row:first-child h1,
+body.project-training-page .container .row:first-child h2,
+body.project-training-page .container .row:first-child h3,
+body.project-training-page .container .row:first-child h4,
+body.project-update-page .container .row:first-child,
+body.project-update-page .container .row:first-child h1,
+body.project-update-page .container .row:first-child h2,
+body.project-update-page .container .row:first-child h3,
+body.project-update-page .container .row:first-child h4 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #e89f10; }
+
+body.projects-page .container form.anlzer-form input,
+body.projects-page .container form.anlzer-form textarea,
+body.projects-page .container form.anlzer-form select,
+body.project-creation-page .container form.anlzer-form input,
+body.project-creation-page .container form.anlzer-form textarea,
+body.project-creation-page .container form.anlzer-form select,
+body.project-training-page .container form.anlzer-form input,
+body.project-training-page .container form.anlzer-form textarea,
+body.project-training-page .container form.anlzer-form select,
+body.project-update-page .container form.anlzer-form input,
+body.project-update-page .container form.anlzer-form textarea,
+body.project-update-page .container form.anlzer-form select {
+  color: whitesmoke; }
+
+body.projects-page .container .row .grid figure,
+body.project-creation-page .container .row .grid figure,
+body.project-training-page .container .row .grid figure,
+body.project-update-page .container .row .grid figure {
+  overflow-y: hidden;
+  max-height: 300px;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
+
+body.projects-page .container .row .grid figure:hover h4, body.projects-page .container .row .grid figure:hover h6,
+body.project-creation-page .container .row .grid figure:hover h4,
+body.project-creation-page .container .row .grid figure:hover h6,
+body.project-training-page .container .row .grid figure:hover h4,
+body.project-training-page .container .row .grid figure:hover h6,
+body.project-update-page .container .row .grid figure:hover h4,
+body.project-update-page .container .row .grid figure:hover h6 {
+  display: none; }
+
+body.projects-page .container .row .grid figure:hover p span,
+body.project-creation-page .container .row .grid figure:hover p span,
+body.project-training-page .container .row .grid figure:hover p span,
+body.project-update-page .container .row .grid figure:hover p span {
+  max-height: 110px;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  display: block; }
+
+body.projects-page .container .row .grid figure:hover p a,
+body.project-creation-page .container .row .grid figure:hover p a,
+body.project-training-page .container .row .grid figure:hover p a,
+body.project-update-page .container .row .grid figure:hover p a {
+  margin-top: 0 !important; }
+
+body.projects-page .container .row .grid figure h4,
+body.project-creation-page .container .row .grid figure h4,
+body.project-training-page .container .row .grid figure h4,
+body.project-update-page .container .row .grid figure h4 {
+  margin-top: 10%;
+  font-size: 25px;
+  text-transform: capitalize;
+  color: #ECB204;
+  max-height: 95px;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: margin-top 0.4s ease-in;
+  -moz-transition: margin-top 0.4s ease-in;
+  -ms-transition: margin-top 0.4s ease-in;
+  -o-transition: margin-top 0.4s ease-in;
+  transition: margin-top 0.4s ease-in; }
+
+body.projects-page .container .row .grid figure h6,
+body.project-creation-page .container .row .grid figure h6,
+body.project-training-page .container .row .grid figure h6,
+body.project-update-page .container .row .grid figure h6 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 15%; }
+
+body.projects-page .container .row .project-teaser,
+body.project-creation-page .container .row .project-teaser,
+body.project-training-page .container .row .project-teaser,
+body.project-update-page .container .row .project-teaser {
+  height: 240px;
+  background: rgba(255, 255, 255, 0.4);
+  background-clip: content-box;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+body.projects-page .container .row .training-files,
+body.project-creation-page .container .row .training-files,
+body.project-training-page .container .row .training-files,
+body.project-update-page .container .row .training-files {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+body.projects-page .container .row .training-files:last-of-type,
+body.project-creation-page .container .row .training-files:last-of-type,
+body.project-training-page .container .row .training-files:last-of-type,
+body.project-update-page .container .row .training-files:last-of-type {
+  margin-bottom: 1.7em; }
+
+body.projects-page .container .row .training-files:hover,
+body.project-creation-page .container .row .training-files:hover,
+body.project-training-page .container .row .training-files:hover,
+body.project-update-page .container .row .training-files:hover {
+  background: rgba(255, 255, 255, 0.2); }
+
+body.projects-page .container .row .training-files a,
+body.project-creation-page .container .row .training-files a,
+body.project-training-page .container .row .training-files a,
+body.project-update-page .container .row .training-files a {
+  color: inherit; }
+
+body.projects-page .container .row .training-files a:hover,
+body.project-creation-page .container .row .training-files a:hover,
+body.project-training-page .container .row .training-files a:hover,
+body.project-update-page .container .row .training-files a:hover {
+  color: #ECB204; }
+
+body.projects-page form.anlzer-form .label-icon i.fa,
+body.project-creation-page form.anlzer-form .label-icon i.fa,
+body.project-training-page form.anlzer-form .label-icon i.fa,
+body.project-update-page form.anlzer-form .label-icon i.fa {
+  color: white; }
+
+body.project-training-page p {
+  font-size: 16px;
+  color: white; }
+
+/*# sourceMappingURL=/static/anlzer/sass/projects.css.map */

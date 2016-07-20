@@ -1,0 +1,45 @@
+{% load widget_tweaks %}
+
+{% csrf_token %}
+<div class="fields-container">
+    <p>
+        <label class="label-icon"><i class="fa fa-folder-o"></i></label>
+        {{ form.product|attr:"placeholder: Project Title" }}
+        {{ form.product.errors }}
+    </p>
+    <p>
+        <label class="label-icon"><i class="fa fa-cubes"></i></label>
+        {{ form.service|attr:"placeholder: Product name" }}
+        {{ form.service.errors }}
+    </p>
+    <p>
+        <label class="label-icon"><i class="fa fa-cogs"></i></label>
+        {{ form.title|attr:"placeholder: Service name" }}
+        {{ form.title.errors }}
+    </p>
+    <p>
+        <label class="label-icon"><i class="fa fa-commenting-o"></i></label>
+        {{ form.description|attr:"placeholder: Short Description" }}
+        {{ form.description.errors }}
+    </p>
+    <p>
+        <label class="label-icon"><i class="fa fa-feed"></i></label>
+        {{ form.pages|attr:"placeholder: Pages to be tracked"|add_class:"anlzer-tokenfield" }}
+        {{ form.pages.errors }}
+    </p>
+    <p>
+        <label class="label-icon"><i class="fa fa-hashtag"></i></label>
+        {{ form.hashtags|attr:"placeholder: Hashtags to check"|add_class:"anlzer-tokenfield" }}
+        {{ form.hashtags.errors }}
+    </p>
+    <p>
+        {{ form.provider|attr:"placeholder: Services to check"|add_class:"block-center select-to-ul" }}
+        {{ form.provider.errors }}
+    </p>
+
+    {% if form.errors %}
+        {% for error in form.non_field_errors %}
+            <p class="django-form-error">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+</div>

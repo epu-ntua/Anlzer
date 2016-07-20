@@ -1,0 +1,148 @@
+/* variable definition */
+form.anlzer-form input,
+form.anlzer-form textarea,
+form.anlzer-form select {
+  outline: 0;
+  border: none;
+  background: transparent;
+  box-shadow: 0 0 0 0;
+  border-bottom: 1px solid #C1C1C1;
+  border-radius: 0;
+  color: grey;
+  font-weight: 300;
+  font-size: 20px;
+  overflow: hidden; }
+
+form.anlzer-form input:active, form.anlzer-form input:focus,
+form.anlzer-form textarea:active,
+form.anlzer-form textarea:focus,
+form.anlzer-form select:active,
+form.anlzer-form select:focus {
+  outline: none; }
+
+form.anlzer-form input:-webkit-autofill, form.anlzer-form input:-webkit-autofill:focus,
+form.anlzer-form textarea:-webkit-autofill,
+form.anlzer-form textarea:-webkit-autofill:focus,
+form.anlzer-form select:-webkit-autofill,
+form.anlzer-form select:-webkit-autofill:focus {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px white inset;
+  color: grey; }
+
+form.anlzer-form input[type=file],
+form.anlzer-form textarea[type=file],
+form.anlzer-form select[type=file] {
+  display: inline-block; }
+
+form.anlzer-form .label-icon {
+  margin-right: 25px;
+  border: 1px solid #C1C1C1;
+  border-radius: 50%;
+  padding: 8px 16px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+form.anlzer-form .label-icon.focus {
+  border-color: #E89F10;
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none; }
+
+form.anlzer-form .label-icon i.fa {
+  color: #777777; }
+
+form.anlzer-form ul.errorlist li,
+form.anlzer-form .django-form-error {
+  color: #D90000;
+  list-style: none; }
+
+form.anlzer-form select,
+form.anlzer-form select[multiple],
+form.anlzer-form select[multiple].input-lg {
+  border: none;
+  height: 70px;
+  padding-bottom: 10px; }
+
+form.anlzer-form select option,
+form.anlzer-form select[multiple] option,
+form.anlzer-form select[multiple].input-lg option {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #E89F10;
+  background: rgba(255, 255, 255, 0.05);
+  margin-right: 15px;
+  border-radius: 3px;
+  cursor: pointer; }
+
+form.anlzer-form select option:last-of-type,
+form.anlzer-form select[multiple] option:last-of-type,
+form.anlzer-form select[multiple].input-lg option:last-of-type {
+  margin-right: 0; }
+
+form.anlzer-form select option:hover,
+form.anlzer-form select[multiple] option:hover,
+form.anlzer-form select[multiple].input-lg option:hover {
+  background: rgba(255, 255, 255, 0.1); }
+
+form.anlzer-form select option:focus, form.anlzer-form select option:active, form.anlzer-form select option:visited, form.anlzer-form select option:checked,
+form.anlzer-form select[multiple] option:focus,
+form.anlzer-form select[multiple] option:active,
+form.anlzer-form select[multiple] option:visited,
+form.anlzer-form select[multiple] option:checked,
+form.anlzer-form select[multiple].input-lg option:focus,
+form.anlzer-form select[multiple].input-lg option:active,
+form.anlzer-form select[multiple].input-lg option:visited,
+form.anlzer-form select[multiple].input-lg option:checked {
+  background: #E89F10;
+  color: white; }
+
+form.anlzer-form select:-internal-list-box option:checked {
+  background-color: #E89F10 !important; }
+
+form.anlzer-form .help-text {
+  font-size: 12px;
+  color: #E89F10; }
+
+.login-form {
+  width: 50%;
+  margin: 10vh 25%;
+  padding-top: 25px;
+  border-radius: 5px;
+  background: whitesmoke; }
+
+.login-form .row {
+  line-height: 1.2em; }
+
+.login-form .fields-container {
+  padding: 0 15%; }
+
+.login-form .logo {
+  margin: 15px 0 45px 0; }
+
+.login-form .logo a,
+.login-form .logo a:hover {
+  border: none; }
+
+.login-form input:-webkit-autofill, .login-form input:-webkit-autofill:focus, .login-form select:-webkit-autofill, .login-form select:-webkit-autofill:focus, .login-form textarea:-webkit-autofill, .login-form textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px whitesmoke inset !important; }
+
+.login-form .dark {
+  background: lightgrey;
+  border-top: 1px solid white;
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  min-height: 65px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+  font-size: 20px; }
+
+.login-form a {
+  color: #E89F10; }
+
+.login-form a:hover {
+  color: #ECB204;
+  border-bottom: 1px solid; }
+
+/*# sourceMappingURL=/static/anlzer/sass/login.css.map */

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+
+{% block title %}Login{% endblock %}
+{% block body_class %}login-page{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/account.scss' %}">
+{% endblock %}
+
+{% block navbar %}{% include 'landing/util/menu.html' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post" autocomplete="off" action="{% url 'login' %}" class="login-form anlzer-form">
+        {% csrf_token %}
+
+        <div class="logo row"><a href="{% url 'index' %}" class="center-block text-center"><img src="{% static 'anlzer/img/logo-grey.PNG' %}" alt="logo"></a></div>
+
+        <div class="fields-container">
+            <p>
+                <label class="label-icon"><i class="fa fa-user"></i></label>
+                {{ form.username|attr:"placeholder: Your Username" }}
+            </p>
+            <p>
+                <label class="label-icon"><i class="fa fa-lock"></i></label>
+                {{ form.password|attr:"placeholder: Your Password" }}
+            </p>
+
+            {% if form.errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="django-form-error">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <p>
+                <button type="submit" class="success-btn text-center">Log In</button>
+            </p>
+        </div>
+
+        <div class="row dark">
+            <div class="col-xs-12 text-center">New to Anlzer? <a href="{% url 'register' %}"> Sign up</a></div>
+            <p><div class="col-xs-12 text-center">Forgot your password? <a href="{% url 'password-reset' %}"> Reset it</a></div></p>
+        </div>
+    </form>
+</div>
+{% endblock %}

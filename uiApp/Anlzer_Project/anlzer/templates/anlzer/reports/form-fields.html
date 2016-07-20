@@ -1,0 +1,56 @@
+{% load static %}
+{% load filters %}
+{% load widget_tweaks %}
+
+{% if step1_fields %}
+    <div class="fields-container step1-fields">
+        <p>
+            <label class="label-icon"><i class="fa fa-folder-o"></i></label>
+            {{ form.title|attr:"placeholder: Report Title" }}
+            {{ form.title.errors }}
+        </p>
+        <p>
+            <label class="label-icon"><i class="fa fa-eye"></i></label>
+            <span class="font-20" >Live: </span>
+            {{ form.live|add_class:"switchbox live-report-switchbox" }}
+        </p>
+        <p class="live-range" {% if object and not object.live %}style="display: none"{% endif %}>
+            <label class="label-icon"><i class="fa fa-calendar"></i></label>
+            {{ form.live_range|attr:"placeholder: Live Date Range" }}
+            {{ form.live_range.errors }}
+        </p>
+        <p class="fixed-range" {% if not object or object.live %}style="display: none"{% endif %}>
+            <!-- dummy input field to display dateRangePicker -->
+            <label class="label-icon"><i class="fa fa-calendar"></i></label>
+            <input type="text" class="input-lg anlzer-daterangepicker" placeholder="Insert a Date Range"/>
+        </p>
+        <p class="hidden">
+            {{ form.start_date }}
+            {{ form.start_date.errors }}
+        </p>
+        <p class="hidden">
+            {{ form.end_date }}
+            {{ form.end_date.errors }}
+        </p>
+    </div>
+{% endif %}
+
+
+{% if step2_fields %}
+    <div class="fields-container step2-fields">
+        <p>
+            <label class="label-icon"><i class="fa fa-feed"></i></label>
+            {{ form.pages|attr:"placeholder: Pages to be tracked"|add_class:"anlzer-tokenfield" }}
+            {{ form.pages.errors }}
+        </p>
+        <p>
+            <label class="label-icon"><i class="fa fa-hashtag"></i></label>
+            {{ form.hashtags|attr:"placeholder: Hashtags to check"|add_class:"anlzer-tokenfield" }}
+            {{ form.hashtags.errors }}
+        </p>
+        <p>
+            {{ form.provider|attr:"placeholder: Services to check"|add_class:"block-center"|add_class:"select-to-ul" }}
+            {{ form.provider.errors }}
+        </p>
+    </div>
+{% endif %}

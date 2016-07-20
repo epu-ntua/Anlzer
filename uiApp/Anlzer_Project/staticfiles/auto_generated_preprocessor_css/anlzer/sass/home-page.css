@@ -1,0 +1,121 @@
+/* variable definition */
+body.user-home-page .container > .row:first-of-type {
+  padding-top: 15em; }
+
+body.user-home-page .container > .row:first-of-type h2 {
+  font: 300 4em Roboto, Arial, Helvetica;
+  color: #099e6e;
+  margin-bottom: 0; }
+
+body.user-home-page .container > .row:first-of-type h3 {
+  margin-top: 1em;
+  color: #999; }
+
+body.user-home-page .container > .row:first-of-type .call-to-action {
+  border: 1px solid #099e6e;
+  color: #099e6e;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in; }
+
+body.user-home-page .container > .row:first-of-type .call-to-action:hover,
+body.user-home-page .container > .row:first-of-type .call-to-action.active {
+  background: #099e6e;
+  color: white; }
+
+body.user-home-page .project-drawer, body.user-home-page .project-drawer.closed {
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  top: 90px;
+  left: -20%;
+  background: #fafafa;
+  z-index: 2000;
+  -webkit-transition: left 0.3s ease-out;
+  -moz-transition: left 0.3s ease-out;
+  -ms-transition: left 0.3s ease-out;
+  -o-transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out; }
+
+body.user-home-page .project-drawer.open {
+  left: 0; }
+
+body.user-home-page .project-drawer h2, body.user-home-page .project-drawer h3, body.user-home-page .project-drawer h4 {
+  color: green; }
+
+body.user-home-page .project-drawer .drawer-close {
+  padding: 6px 10px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  -webkit-transition: background 0.1s ease-out;
+  -moz-transition: background 0.1s ease-out;
+  -ms-transition: background 0.1s ease-out;
+  -o-transition: background 0.1s ease-out;
+  transition: background 0.1s ease-out; }
+
+body.user-home-page .project-drawer .drawer-close:hover {
+  background: #0aaa76; }
+
+body.user-home-page .project-drawer .latest-project,
+body.user-home-page .project-drawer a.latest-project {
+  line-height: 1em;
+  padding: 25px 0;
+  background: transparent;
+  border-bottom: 1px solid #333;
+  font-size: 25px;
+  vertical-align: middle;
+  display: block;
+  color: #999;
+  vertical-align: -webkit-baseline-middle;
+  font-weight: 400; }
+
+body.user-home-page .project-drawer .latest-project h6,
+body.user-home-page .project-drawer a.latest-project h6 {
+  line-height: 2em; }
+
+body.user-home-page .project-drawer .latest-project:hover,
+body.user-home-page .project-drawer .latest-project:hover .project-icon,
+body.user-home-page .project-drawer a.latest-project:hover,
+body.user-home-page .project-drawer a.latest-project:hover .project-icon {
+  color: #099e6e; }
+
+body.user-home-page .project-drawer .latest-project:hover h6,
+body.user-home-page .project-drawer a.latest-project:hover h6 {
+  color: #999; }
+
+body.user-home-page .project-drawer .latest-project .project-icon,
+body.user-home-page .project-drawer a.latest-project .project-icon {
+  margin-right: 10px;
+  position: relative;
+  top: -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out; }
+
+body.user-home-page .project-drawer .view-projects {
+  background: transparent;
+  border: 1px solid #099e6e;
+  color: #099e6e;
+  border-radius: 3px;
+  margin-top: 25px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out; }
+
+body.user-home-page .project-drawer .view-projects:hover {
+  background: #099e6e;
+  color: white; }
+
+/*# sourceMappingURL=/static/anlzer/sass/home-page.css.map */

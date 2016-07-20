@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!-- Anlzr Project -->
+<div class="animate fadeInUp col-md-12 report-item">
+    <a href="{% url 'report' project.pk report.pk %}">
+        <div class="col-md-2">
+            <i class="fa fa-file-text-o report-icon"></i>
+        </div>
+        <div class=col-md-8>
+            <h3 title="{{ report.title }}">{{ report.title }}</h3>
+            <h6 class="anlzer-grey">Created: {{ report.created_on|date:"j b Y"|title }}, at {{ report.created_on|time:"H:i" }} &nbsp;&#8226;&nbsp; {{ report.get_run_status }}</h6>
+        </div>
+    </a>
+    <a href="{% url 'report-update' project.pk report.pk %}">
+        <div class="col-md-1">
+            <i class="fa fa-edit report-setup-icon"></i>
+        </div>
+    </a>
+    <a href="{% url 'report-delete' project.pk report.pk %}" class="delete-request">
+        <div class="col-md-1">
+            <i class="fa fa-trash report-delete-icon"></i>
+        </div>
+    </a>
+</div>
+<!-- Anlzr Project -->

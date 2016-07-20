@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+{% load filters %}
+
+{% block title %}Anlzer Home{% endblock %}
+{% block body_class %}user-home-page{% endblock %}
+
+{% block css %}
+<!-- page specific stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/home-page.scss' %}">
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'anlzer/css/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'anlzer/css/set.css' %}" />
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'anlzer/css/blueimp-gallery.min.css' %}">
+
+{% endblock %}
+
+{% block navbar %}{% include 'anlzer/util/non-project-menu.html' with active="Home" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>{{ request.user|get_appropriate_greeting }}</h2>
+            <h3>What are you up for today?</h3>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6">
+                    <div class="col-md-12 text-uppercase call-to-action toggle-project-drawer">View your Projects</div>
+                </div>
+                <div class="col-md-6">
+                    <a href="{% url 'project-create' %}" class="col-md-12 text-uppercase call-to-action">Create a Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-drawer">
+        <div class="row">
+            {% if object_list %}
+                <h3 class="text-uppercase col-md-10 col-md-offset-1">Latest Projects <span class="drawer-close fa fa-remove"></span></h3>
+                <div class="col-md-10 col-md-offset-1">
+                    {% for project in object_list %}
+                        <a class="col-md-12 latest-project" href="{% url 'project' project.pk %}">
+                            <div class="project-icon col-md-2"><i class="fa fa-folder-open"></i></div>
+                            <div class="col-md-9">{{ project.title }}</div>
+                            <h6 class="col-md-offset-3">Created: {{ project.created_on|date:"j b Y"|title }}, at {{ project.created_on|time:"H:i" }}</h6>
+                        </a>
+                    {% endfor %}
+                </div>
+                <div class="col-md-12">
+                    <a href="{% url 'projects' %}" class="btn text-uppercase view-projects col-md-6 col-md-offset-3">View All</a>
+                </div>
+            {% else %}
+                  <h3 class="col-md-10 col-md-offset-2">You don't have any Projects</h3>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'anlzer/js/app/home-page.js' %}"></script>
+{% endblock %}

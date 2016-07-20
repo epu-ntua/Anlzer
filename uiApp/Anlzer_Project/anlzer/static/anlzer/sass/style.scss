@@ -1,0 +1,225 @@
+@import 'variables';
+@import '_menu';
+@import '_footer';
+
+html, body {
+
+  & {
+    min-height: 100vh;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100vw;
+  }
+
+  #home .container:first-of-type {
+    min-height: 64vh;
+  }
+
+  .anlzer-yellow {
+    color: $anlzer-yellow !important;
+  }
+
+  a.anlzer-yellow:hover {
+    color: $anlzer-yellow-hover !important;
+  }
+
+  .anlzer-whitesmoke {
+    color: whitesmoke !important;
+  }
+
+  .anlzer-grey {
+    color: $anlzer-grey !important;
+  }
+
+  .anlzer-green {
+    color: $anlzer-green !important
+  }
+
+  .anlzer-red {
+    color: $anlzer-red !important;
+  }
+
+  .anlzer-white {
+    color: white !important;
+  }
+
+  .anlzer-lightgrey {
+    color: lightgrey !important;
+  }
+
+  .anlzer-bg-danger {
+    & {
+      background: $anlzer-danger !important;
+      background-color: $anlzer-danger !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $anlzer-danger-hover !important;
+      background-color: $anlzer-danger-hover !important;
+    }
+  }
+
+  .anlzer-bg-default {
+    & {
+      background: whitesmoke !important;
+      background-color: whitesmoke !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: whitesmoke !important;
+      background-color: whitesmoke !important;
+    }
+
+    &.btn {
+      color: #666 !important;
+      font-weight: normal;
+    }
+  }
+
+  .anlzer-bg-grey {
+    & {
+      background: $anlzer-grey !important;
+      background-color: $anlzer-grey !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $anlzer-grey-hover !important;
+      background-color: $anlzer-grey-hover !important;
+    }
+  }
+
+  .font-20 {
+    font-size: 20px;
+  }
+
+
+
+  .small-info-text,
+  p.small-info-text {
+    margin-top: 30px;
+    font-size: 13px;
+  }
+
+  .modal-content {
+    background: rgba(28, 28, 28, 0.94);
+    color: $input-border-grey;
+  }
+
+  .modal-footer {
+    border-color: #2C2C2C;
+  }
+}
+
+button,
+select,
+select option {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  outline: none !important;
+}
+
+a:hover,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+
+.glyphicon-chevron-left {
+  &:before {
+    content: '';
+  }
+}
+
+
+.glyphicon-chevron-right {
+  &:before {
+    content: '';
+  }
+}
+
+.success-btn {
+  & {
+    color: white;
+    background: $anlzer-yellow;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 46px;
+    border:transparent;
+    font-size: 20px;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background: $anlzer-yellow-hover;
+  }
+
+}
+
+.example-textarea {
+  background: $anlzer-opac-white;
+  color: $anlzer-yellow;
+  outline: none;
+  overflow: hidden;
+  margin-bottom: 30px;
+  font-size:15px;
+}
+
+ul.messages {
+  & {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    list-style: none;
+    display: none;
+    padding: 25px;
+    background: $anlzer-yellow;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 18px;
+    margin-left: 20%;
+    color: white;
+  }
+
+  .success {
+    color: white;
+  }
+
+  .error {
+    color: darkred;
+  }
+}
+
+.navbar-brand img {
+  height: 75px;
+  margin-top: -10px;
+}
+
+.nav.nav-tabs {
+  & {
+    margin-top: 5%;
+  }
+
+  li.active>a,
+  li.active>a:hover,
+  li.active>a:focus {
+    color: #986605;
+  }
+
+  a {
+    font-size: 16px;
+    color: $anlzer-opac-black-hover;
+  }
+}

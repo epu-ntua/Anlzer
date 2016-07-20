@@ -1,0 +1,155 @@
+@import 'variables.scss';
+
+body.user-home-page {
+
+  & {
+    background: url(../img/back2.jpg) right no-repeat fixed #fff;
+    background-color: #3e3e3e;
+    background-blend-mode: multiply;
+  }
+
+  .container > .row:first-of-type {
+    & {
+      padding-top: 15em;
+    }
+
+    h2 {
+      font: 300 4em Roboto, Arial, Helvetica;
+      color: $anlzer-yellow;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-top: 1em;
+      color: lightgrey;
+    }
+
+    .call-to-action {
+      border: 1px solid $anlzer-yellow;
+      color: $anlzer-yellow;
+      background: $anlzer-opac-white;
+      padding: 20px 30px;
+      display: block;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 3px;
+
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -ms-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+
+    .call-to-action:hover,
+    .call-to-action.active {
+      background: $anlzer-opac-white-hover;
+      color: $anlzer-yellow-hover;
+    }
+  }
+
+  .project-drawer {
+    &,
+    &.closed {
+      height: 100vh;
+      width: 20%;
+      position: fixed;
+      top: 75px;
+      left: -20%;
+      background: #111;
+      z-index: 2000;
+
+      -webkit-transition: left 0.3s ease-out;
+      -moz-transition: left 0.3s ease-out;
+      -ms-transition: left 0.3s ease-out;
+      -o-transition: left 0.3s ease-out;
+      transition: left 0.3s ease-out;
+    }
+
+    &.open {
+      left: 0;
+    }
+
+    h2, h3, h4 {
+      color: $anlzer-grey
+    }
+
+    .drawer-close {
+      & {
+        padding: 6px 10px;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        font-size: 20px;
+        right: 0;
+
+        -webkit-transition: background 0.3s ease-out;
+        -moz-transition: background 0.3s ease-out;
+        -ms-transition: background 0.3s ease-out;
+        -o-transition: background 0.3s ease-out;
+        transition: background 0.3s ease-out;
+      }
+
+      &:hover {
+        background: $anlzer-opac-white;
+      }
+    }
+
+    .latest-project,
+    a.latest-project {
+
+      & {
+        padding: 25px 0;
+        background: transparent;
+        border-bottom: 1px solid $anlzer-black;
+        font-size: 25px;
+        vertical-align: middle;
+        display: block;
+        color: $anlzer-grey;
+        vertical-align: -webkit-baseline-middle;
+      }
+
+      &:hover {
+        &,
+        .project-icon {
+          color: $anlzer-yellow;
+        }
+
+        h6 {
+          color: $anlzer-grey;
+        }
+      }
+
+      .project-icon {
+        margin-right: 25px;
+        position: relative;
+        top: -2px;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+      }
+
+
+    }
+
+    .view-projects {
+      & {
+        background: transparent;
+        border: 1px solid $anlzer-yellow;
+        color: $anlzer-yellow;
+        border-radius: 3px;
+        margin-top: 25px;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        background: $anlzer-opac-white;
+      }
+    }
+  }
+}

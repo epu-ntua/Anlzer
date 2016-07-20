@@ -1,0 +1,551 @@
+@import "variables";
+@import "_step-wizard.scss";
+@import "_forms.scss";
+
+body.report-creation-page,
+body.report-update-page,
+body.reports-page {
+
+
+  .container {
+    .row:first-child {
+      &, h1, h2, h3, h4 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        color: $anlzer-yellow;
+      }
+    }
+
+    .source-option {
+      & {
+        background: white !important;
+        display: inline-block;
+        color: #555;
+        font-weight: 400;
+        padding: 10px 15px;
+        border: 1px solid $anlzer-yellow;
+        margin-right: 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-bottom: 4em;
+        height: 52px;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      &:not(#modify-project-sources) > span {
+        vertical-align: -webkit-baseline-middle;
+        vertical-align: -moz-middle-with-baseline;
+      }
+
+      &:hover,
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        background: $anlzer-yellow !important;
+        color: white;
+      }
+
+    }
+  }
+
+  form.anlzer-form .label-icon i.fa {
+      color: #666;
+      font-weight: normal;
+  }
+
+  .applyBtn,
+  .cancelBtn {
+    border: none;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+
+  .applyBtn {
+    &{
+      background: $anlzer-yellow;
+      color: whitesmoke;
+    }
+
+    &:hover {
+      background: $anlzer-yellow-hover;
+    }
+  }
+
+  .cancelBtn {
+    &{
+      background: $anlzer-grey;
+      color: whitesmoke;
+    }
+
+    &:hover {
+      background: $anlzer-grey-hover;
+    }
+  }
+
+
+  .ranges li {
+    & {
+      font-size: 13px;
+      background: rgba(245, 245, 245, 0.11);
+      border: 1px solid;
+      border-radius: 4px;
+      color: $anlzer-yellow;
+      padding: 3px 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background: $anlzer-yellow-hover;
+      color: white;
+    }
+  }
+
+  .report-item {
+    & {
+      padding-top: 2em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid #eee;
+    }
+
+    &:last-of-type {
+      border: none;
+    }
+
+    & {
+      .report-setup-icon,
+      .report-delete-icon {
+        opacity: 0;
+        padding: 10px 12px;
+      }
+
+      .report-icon {
+        padding: 15px 20px;
+        font-size: 30px;
+      }
+
+      h3 {
+        white-space: nowrap;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: left !important;
+        color: #555;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+
+      }
+
+      h6 {
+        text-align: left;
+        font-size: 13px;
+        color: #ce6816;
+      }
+    }
+
+    &:hover {
+
+      .report-setup-icon,
+      .report-delete-icon {
+        opacity: 1;
+
+          -webkit-animation: fadein 1.5s; /* Firefox < 16 */
+          -ms-animation: fadein 1.5s; /* Internet Explorer */
+          -o-animation: fadein 1.5s; /* Opera < 12.1 */
+          animation: fadein 1.5s;
+      }
+
+      .report-icon,
+      .report-icon:hover {
+        border-color: $anlzer-yellow;
+        color: $anlzer-yellow;
+        cursor: pointer;
+      }
+
+      h3,
+      h3:hover {
+        color: $anlzer-yellow-hover;
+      }
+    }
+  }
+
+  .report-icon,
+  .report-setup-icon,
+  .report-delete-icon {
+    & {
+      color: #777;
+      background: #fcfcfc;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      font-size: 15px;
+      padding: 10px 12px;
+
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      border-color: $anlzer-yellow;
+      color: $anlzer-yellow;
+    }
+  }
+
+  .row.report-details-container {
+    & {
+      min-height: 300px;
+      border: 1px solid $anlzer-grey;
+      margin-bottom: 6em;
+      background: white;
+    }
+
+    .report-details-menu {
+      & {
+        position: absolute;
+        left: 36.5%;
+        top: 208px;
+        z-index: 1;
+
+        .ui-tab-btn {
+          background: white;
+          cursor: pointer;
+          color: #666;
+
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -ms-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .ui-tab-btn:hover {
+          color: black;
+          font-weight: 400;
+        }
+
+        .ui-tab-btn.active{
+          background: $anlzer-yellow;
+          color: whitesmoke;
+        }
+      }
+    }
+
+    .ui-tab-entry {
+      display: none;
+    }
+  }
+
+  .anlzer-overview-container {
+    & {
+      height: 250px;
+    }
+
+    &::before {
+      content: '';
+      width: 87%;
+      height: 1px;
+      background: white;
+      position: absolute;
+      margin-left: 7%;
+    }
+
+    &::after {
+      content: '';
+      width: 87%;
+      height: 1px;
+      background: white;
+      position: relative;
+      margin-left: 7%;
+      bottom: -110px;
+    }
+
+    .anlzer-overview-btn {
+      & {
+        border-radius: 25px;
+        margin-left: 6.5%;
+        padding: 1em;
+        color: white;
+        background: $anlzer-yellow;
+        border-color: $anlzer-yellow;
+        margin-top: 100px;
+      }
+
+      &:nth-child(even)::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 75px;
+        background: white;
+        top: 0;
+        left: 0;
+        margin-top: 24px;
+        margin-left: -75px;
+
+      }
+
+      &:nth-child(even)::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 75px;
+        background: white;
+        top: 0;
+        margin-top: 24px;
+        margin-left: 15px;
+      }
+    }
+
+    .knob-list {
+
+      & {
+        height: 300px;
+      }
+
+      & > * {
+        position: relative;
+        top: 50px;
+        float: left;
+        width: 20%;
+      }
+      .name {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        font-weight: 400;
+        color: $anlzer-yellow;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    .donut-circle {
+      & {
+        height: 150px;
+        margin: 50px 25px;
+        border-radius: 50%;
+        width: 150px;
+        border: 25px solid;
+        line-height: 1.1em;
+      }
+
+      &:first-of-type {
+        margin-left: 80px;
+      }
+
+      div {
+        vertical-align: middle;
+        margin-top: 30px;
+        line-height: 1.1em;
+        color: orange;
+        font-size: 20px;
+        padding: 0;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  .right-delimiter {
+    border-right: 1px solid white;
+    padding-bottom: 25px;
+  }
+
+  .left-delimiter {
+    border-left: 1px solid white;
+  }
+
+  .term {
+    margin-right: 25px;
+    font-size: 20px;
+    font-weight: 300;
+    display: inline-block;
+    line-height: 3em;
+  }
+
+  .term.combination {
+    border-radius: 50px;
+    padding: 5px;
+    line-height: 1.5em;
+    margin: 15px 0;
+    box-shadow: inset 5px -4px 20px #222;
+}
+
+  .circle {
+    border-radius: 50%;
+    border: 1px solid;
+    padding: 40px 15px;
+    display: inline-block;
+    text-align: center;
+    font-size: 50px;
+    width: 160px;
+    height: 150px;
+  }
+
+  .vertical-line {
+    float: left;
+    height: 100px;
+    width: 1px;
+    background: lightgrey;
+    margin-left: 50%;
+    margin-top: 10px;
+  }
+
+  .text-xl {
+    font-size: 4.5em;
+    font-weight: 300;
+  }
+
+  .text-sm {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .popover-content > i.fa {
+    margin: 5px 0;
+    display: block;
+    cursor: pointer;
+  }
+
+  .popover.left > .arrow:after {
+    border-left-color: $anlzer-black;
+  }
+
+  .popover,
+  .popover-content {
+    background: $anlzer-black;
+  }
+
+  .report-creator {
+    font-size: 17px;
+    color: darkgrey;
+    margin-left: 15px;
+  }
+
+}
+
+.overview-filters {
+  background: #eee;
+  color: #777;
+  border-radius: 5px;
+
+  .supported-language {
+    margin: 10px 0;
+    padding: 10px;
+  }
+}
+
+.project-comments-wrapper {
+
+    &{
+      max-height: 35em;
+      border-radius: 5px;
+      background: #fefefe;
+      border: 1px solid #ddd;
+    }
+
+    .comment-list {
+      max-height: 300px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    h4 {
+      color: #666;
+      margin-top: 15px;
+      font-weight: 400;
+    }
+
+    .comment {
+      & {
+        border-bottom: 1px solid #e5e5e5;
+        padding: 15px;
+        color: lightgrey;
+      }
+
+      .comment-text {
+        color: #999;
+        padding:0;
+      }
+
+      .comment-author {
+        color: #555;
+        padding-bottom: 15px;
+        font-size: 1.1em;
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+
+      .comment-date {
+        font-size: 10px;
+          color: #666;
+          font-weight: 400;
+      }
+    }
+
+    .comment-form {
+      & {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        font-size: 17px;
+      }
+    }
+
+    .comment:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#results {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

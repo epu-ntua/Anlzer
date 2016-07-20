@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+
+{% block title %}Admin{% endblock %}
+{% block body_class %}admin-panel-page{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/company-admin-panel.scss' %}">
+{% endblock %}
+
+{% block navbar %}{% include 'anlzer/util/non-project-menu.html' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                <li role="presentation" class="active"><a href="#users" aria-controls="messages" role="tab" data-toggle="tab">Users</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade" id="home"></div>
+                <div role="tabpanel" class="tab-pane active fade user-management in" id="users">
+                    <div class="col-xs-12">
+                        <h3 class="anlzer-yellow text-center">Create a new Account</h3>
+                        <div class="col-md-10 col-md-offset-1 individual-account-creation-formfields">
+                            <form method="post" autocomplete="off" class="register-form anlzer-form text-center">
+                                {% csrf_token %}
+
+                                <div class="fields-container">
+                                    <p>
+                                        <label class="label-icon"><i class="fa fa-user"></i></label>
+                                        {{ form.username|attr:"placeholder: Choose a Username"}}
+                                        {{ form.username.errors }}
+                                    </p>
+
+                                    <p>
+                                        <label class="label-icon"><i class="fa fa-lock"></i></label>
+                                        {{ form.password1|attr:"placeholder: Choose a Password" }}
+                                        {{ form.password1.errors }}
+                                    </p>
+
+                                    {% if form.errors %}
+                                        {% for error in form.non_field_errors %}
+                                            <p class="django-form-error">{{ error }}</p>
+                                        {% endfor %}
+                                    {% endif %}
+
+                                    <p class="col-md-8 col-md-offset-2">
+                                        <button type="submit" class="success-btn text-center">Create Account</button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <h3 class="anlzer-yellow text-center">Active Accounts</h3>
+                        <div class="col-md-10 col-md-offset-1">
+                            {% for user in request.user.get_company_accounts %}
+                                <div class="company-active-account col-md-12">
+                                    <h4 class="active-account-title col-md-8">{{ user.username }}</h4>
+                                    <a href="{% url 'account-delete' user.pk %}" class="btn anlzer-btn col-md-2 anlzer-bg-danger delete-active-account delete-request">Delete</a>
+                                    <h6 class="active-account-creation-date col-md-10">Created: {{ user.date_joined|date:"j b Y"|title }}, at {{ user.date_joined|time:"H:i" }}</h6>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="settings"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

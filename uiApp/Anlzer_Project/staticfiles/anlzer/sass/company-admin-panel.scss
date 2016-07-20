@@ -1,0 +1,52 @@
+@import "variables";
+
+
+div.tab-pane.user-management {
+
+  .company-active-account {
+    & {
+      border-radius: 50px;
+      border: 1px solid $anlzer-grey;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h4, h6 {
+      margin-left: 30px;
+
+    }
+
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    h6 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .delete-active-account {
+      top: 15px;
+      position: relative;
+      float: right;
+    }
+  }
+
+  .company-active-account:hover {
+    border-color: #986605;
+    color: #986605;
+  }
+
+  .individual-account-creation-formfields {
+    padding-top: 20px;
+    border-radius: 10px;
+    background: whitesmoke;
+  }
+}

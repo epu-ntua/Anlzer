@@ -1,0 +1,303 @@
+@import "variables";
+@import "_step-wizard.scss";
+@import "_forms.scss";
+
+body.report-creation-page,
+body.report-update-page,
+body.reports-page {
+
+  & {
+    background: url(../img/back2.jpg) right 100% no-repeat fixed #fff;
+    background-color: #333333;
+    background-blend-mode: multiply;
+    background-size: 100%;
+  }
+
+  .container {
+    .row:first-child {
+      &, h1, h2, h3, h4 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        color: $anlzer-yellow;
+      }
+
+      hr {
+        background: $anlzer-black;
+        border: 1px solid grey;
+      }
+    }
+
+    form.anlzer-form input,
+    form.anlzer-form textarea,
+    form.anlzer-form select {
+      color: whitesmoke;
+    }
+
+    .source-option {
+      & {
+        background: $anlzer-opac-black;
+        display: inline-block;
+        padding: 10px 15px;
+        border: 1px solid $anlzer-yellow;
+        margin-right: 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-bottom: 4em;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        background: $anlzer-opac-black-hover;
+      }
+
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        background: $anlzer-yellow;
+      }
+
+      &:hover {
+        background: $anlzer-opac-black-hover;
+      }
+    }
+  }
+
+  form.anlzer-form .label-icon i.fa {
+      color: white;
+  }
+
+  .applyBtn,
+  .cancelBtn {
+    border: none;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+
+  .applyBtn {
+    &{
+      background: $anlzer-yellow;
+      color: whitesmoke;
+    }
+
+    &:hover {
+      background: $anlzer-yellow-hover;
+    }
+  }
+
+  .cancelBtn {
+    &{
+      background: $anlzer-grey;
+      color: whitesmoke;
+    }
+
+    &:hover {
+      background: $anlzer-grey-hover;
+    }
+  }
+
+
+  .ranges li {
+    & {
+      font-size: 13px;
+      background: rgba(245, 245, 245, 0.11);
+      border: 1px solid;
+      border-radius: 4px;
+      color: $anlzer-yellow;
+      padding: 3px 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background: $anlzer-yellow-hover;
+      color: white;
+    }
+  }
+
+  .report-item {
+    & {
+      padding-top: 2em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid;
+    }
+
+    &:last-of-type {
+      border: none;
+    }
+
+    & {
+      .report-setup-icon,
+      .report-delete-icon {
+        opacity: 0;
+        padding: 10px 12px;
+      }
+
+      .report-icon {
+        padding: 15px 20px;
+        font-size: 30px;
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: left !important;
+        color: lightgrey;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+
+      }
+
+      h6 {
+        text-align: left;
+        font-size: 15px;
+        color: #F7DEBF;
+      }
+    }
+
+    &:hover {
+
+      .report-setup-icon,
+      .report-delete-icon {
+        opacity: 1;
+
+          -webkit-animation: fadein 1.5s; /* Firefox < 16 */
+          -ms-animation: fadein 1.5s; /* Internet Explorer */
+          -o-animation: fadein 1.5s; /* Opera < 12.1 */
+          animation: fadein 1.5s;
+      }
+
+      .report-icon,
+      .report-icon:hover {
+        border-color: $anlzer-yellow;
+        color: $anlzer-yellow;
+        cursor: pointer;
+      }
+
+      h3,
+      h3:hover {
+        color: $anlzer-yellow-hover;
+      }
+    }
+  }
+
+  .report-icon,
+  .report-setup-icon,
+  .report-delete-icon {
+    & {
+      color: $input-border-grey;
+      background: $anlzer-opac-white;
+      border: 1px solid whitesmoke;
+      border-radius: 50%;
+      font-size: 15px;
+      padding: 10px 12px;
+
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      border-color: $anlzer-yellow;
+      color: $anlzer-yellow;
+    }
+  }
+
+  .row.report-details-container {
+    & {
+      min-height: 300px;
+      max-height: 1000px;
+      overflow-y: auto;
+      border: 1px solid $anlzer-grey
+    }
+
+    .report-details-menu {
+      & {
+        position: absolute;
+        left: 35.5%;
+        top: 208px;
+
+        button {
+          background: #0E0C09;
+        }
+
+        button:hover {
+          background: #252524;
+        }
+      }
+
+      &.active {
+        background: $anlzer-yellow;
+        color: whitesmoke;
+      }
+    }
+  }
+
+  .popover-content > i.fa {
+    margin: 5px 0;
+    display: block;
+    cursor: pointer;
+  }
+
+  .popover.left > .arrow:after {
+    border-left-color: $anlzer-black;
+  }
+
+  .popover,
+  .popover-content {
+    background: $anlzer-black;
+  }
+
+  .report-creator {
+    font-size: 17px;
+    color: darkgrey;
+    margin-left: 15px;
+  }
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

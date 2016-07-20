@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+
+{% block title %}{{ project.title|capfirst }}Reports Details{% endblock %}
+{% block body_class %}reports-page{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'anlzer/css/bootstrap-switch.css' %}" />
+    <link rel="stylesheet" href="{% static 'anlzer/css/futurico.css' %}" />
+<!-- page specific stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/reports.scss' %}">
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'anlzer/css/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'anlzer/css/set.css' %}" />
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'anlzer/css/blueimp-gallery.min.css' %}">
+{% endblock %}
+
+{% block navbar %}{% include 'anlzer/util/project-menu.html' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <h3 class="text-center col-md-12">
+                <span class="col-md-8 col-md-offset-2 anlzer-lightgrey">{{ report.title|capfirst }} <span class="report-creator">by {{ report.user.username }}</span></span>
+                <a href="{% url 'report-update' project.pk report.pk %}">
+                    <div class="col-md-1">
+                        <i class="fa fa-edit report-setup-icon"></i>
+                    </div>
+                </a>
+                <a href="{% url 'report-delete' project.pk report.pk %}" class="delete-request">
+                    <div class="col-md-1">
+                        <i class="fa fa-trash report-delete-icon"></i>
+                    </div>
+                </a>
+            </h3>
+        </div>
+    </div>
+
+    <div class="row report-details-container">
+        <div class="btn-group report-details-menu" role="group" aria-label="...">
+          <button type="button" class="btn btn-default ui-tab-btn active" data-tab="#overview">Overview</button>
+          <button type="button" class="btn btn-default ui-tab-btn" data-tab="#results">Results</button>
+          <button type="button" class="btn btn-default ui-tab-btn" data-tab="#analytics">Analytics</button>
+        </div>
+        <div id="works" class="clearfix grid col-md-12">
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 overview-filters">
+                        <h4>Filter options</h4>
+                        <form class="anlzer-form col-xs-12">
+                            <p class="col-xs-12">
+                                <strong>Influencer mode: </strong>
+                                <input type="checkbox" class="switchbox" name="influencer-mode"/>
+                            </p>
+                            <div class="col-xs-12" style="border-top: 1px solid #333;">
+
+                                {% for language, abbreviated_language in supported_languages.iteritems %}
+                                    <div class="col-xs-2 supported-language">
+                                        <label>{{ language }}</label>
+                                        <input type="checkbox" checked name="language-filter" value="{{ abbreviated_language }}" class="icheck" />
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="overview" class="fadeInUp col-md-12 ui-tab-entry">
+
+                    <!-- total number of results -->
+                    <div class="row text-center" style="margin-bottom: 0">
+                        <h1 class="text-xl col-md-12">
+                            <div class="circle center-block total-docs"></div>
+                        </h1>
+                        <div class="text-sm col-xs-12 anlzer-grey">results were processed</div>
+                        <div class="vertical-line center-block"></div>
+                    </div>
+                    <!-- social provider breakdown -->
+                    <div class="row text-center anlzer-overview-container">
+                        <div class="col-md-3 btn btn-default anlzer-overview-btn">
+                            <div class="col-md-8"><i class="fa fa-facebook"></i> &nbsp;&nbsp;Facebook</div>
+                            <div class="col-md-4 facebook-docs"></div>
+                        </div>
+                        <div class="col-md-3 btn btn-default anlzer-overview-btn">
+                            <div class="col-md-8"><i class="fa fa-twitter"></i> &nbsp;&nbsp;Twitter</div>
+                            <div class="col-md-4 twitter-docs"></div>
+                        </div>
+                        <div class="col-md-3 btn btn-default anlzer-overview-btn">
+                            <div class="col-md-8"><i class="fa fa-instagram"></i> &nbsp;&nbsp;Instagram</div>
+                            <div class="col-md-4 instagram-docs"></div>
+                        </div>
+                    </div>
+                    <!-- contained all terms -->
+                    <div class="row text-center">
+                        <div class="vertical-line center-block"></div>
+                        <h1 class="text-xl col-md-12">
+                            <div class="circle center-block anlzer-yellow keyworded-docs"></div>
+                        </h1>
+                        <div class="text-sm col-xs-12 anlzer-grey">contained all terms</div>
+                    </div>
+                    <!-- top 3 combinations -->
+                    <div class="row text-center" style="margin-top: 25px;">
+                        <div class="col-md-6 right-delimiter">
+                            {#                        <h3 class="col-md-12 anlzer-grey">Top 3 common combinations</h3>#}
+                            {#                        <div class="col-md-12">#}
+                            {#                            <div class="col-md-10 col-md-offset-1 text-center">#}
+                            {#                                <div class="term combination anlzer-yellow col-md-12">#Ipsum,     #Dolor</div>#}
+                            {#                                <div class="term combination anlzer-yellow col-md-12">#Sit,     #Amat,     #Consectetur</div>#}
+                            {#                                <div class="term combination anlzer-yellow col-md-12">#Adipiscing,     #Elit,     #Eiusmod, #Deus </div>#}
+                            {#                            </div>#}
+                            {#                        </div>#}
+
+                            <h3 class="col-md-12 anlzer-grey" style="border-bottom: 1px solid #ddd;padding-bottom: 10px;">Top 5 Term Combinations</h3>
+                            <div class="col-md-12">
+                                <div class="col-md-10 col-md-offset-1 text-center">
+                                    <h3 style="color: green">Coming soon...</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <!-- top 10 terms -->
+                            <h3 class="col-md-12 anlzer-grey" style="border-bottom: 1px solid #ddd;padding-bottom: 10px;">Top 10 Seen Terms</h3>
+                            <div class="col-md-10 term-container col-md-offset-1">
+                                <div class="term anlzer-yellow"><i>No hashtags are available</i></div>
+                                <!-- hashtags will be created here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row anlzer-overview-container" style="border-color: purple">
+                        <div class="col-md-12 knob-list">
+                            <div>
+                                <input type="text" class="donut sentiment-happy" data-fgColor="green">
+                                <div class="name">Happy</div>
+                            </div>
+                            <div>
+                                <input type="text"  class="donut sentiment-excited" data-fgColor="orange">
+                                <div class="name">Excited</div>
+                            </div>
+                            <div>
+                                <input type="text"class="donut sentiment-neutral" data-fgColor="#555">
+                                <div class="name">Neutral</div>
+                            </div>
+                            <div>
+                                <input type="text" class="donut sentiment-sad" data-fgColor="brown">
+                                <div class="name">Sad</div>
+                            </div>
+                            <div>
+                                <input type="text" class="donut sentiment-angry" data-fgColor="red">
+                                <div class="name">Angry</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="results" class="fadeInUp col-md-10 col-md-offset-1 ui-tab-entry">
+                    <div class="col-md-12 report-item">
+                        <div class="col-md-2">
+                            <i class="fa fa-smile-o report-icon"></i>
+                        </div>
+                        <div class=col-md-8>
+                            <h3 title="{{ report.title }}">I'ts Friday, Friday getting down on friday everybody's looking forward to the weekend</h3>
+                            <h6>Posted: {{ report.created_on|date:"j b Y"|title }}, at {{ report.created_on|time:"H:i" }} &nbsp;&#8226;&nbsp; <i class="fa fa-facebook"></i> &nbsp;&#8226;&nbsp; Aidima</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-12 report-item">
+                        <div class="col-md-2">
+                            <i class="fa fa-smile-o report-icon"></i>
+                        </div>
+                        <div class=col-md-8>
+                            <h3 title="{{ report.title }}">I'ts an extremely hot day today</h3>
+                            <h6>Posted: {{ report.created_on|date:"j b Y"|title }}, at {{ report.created_on|time:"H:i" }} &nbsp;&#8226;&nbsp; <i class="fa fa-facebook"></i> &nbsp;&#8226;&nbsp; Aidima</h6>
+                        </div>
+                    </div>
+                </div>
+                <div id="analytics" class="fadeInUp col-md-12  ui-tab-entry">
+                    <div class="col-md-12 report-item">
+                        {#                <h2>This area should be filled with Kibana - evmorfia</h2>#}
+
+                        {#                    <div class="row" style="...">#}
+                        <div class="col-md-6">
+                            <div id="chartdiv" style="width: 100%; height: 500px; "></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="chartdiv2" style="width: 100%; height: 500px; "></div>
+                        </div>
+
+                        {#                    </div>#}
+
+                    </div>
+                    <div class="col-md-12 report-item">
+                        {#                <h2>This area should be filled with Kibana - evmorfia</h2>#}
+
+                        <div class="row" style="...">
+                            <div class="col-md-12">
+                                <div id="chartstackdiv" style="width: 100%; height: 500px; "></div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 report-item">
+                        {#                <h2>This area should be filled with Kibana - evmorfia</h2>#}
+
+                        {#                    <div class="row" style="...">#}
+                        <div class="col-md-6">
+                            <div id="sentichartdiv" style="width: 100%; height: 500px; "></div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div id="sentiwordclouddd">
+
+
+                            </div>
+
+                        </div>
+
+                        {#                    </div>#}
+
+                    </div>
+                    <div class="col-md-12 report-item">
+                        {#                <h2>This area should be filled with Kibana - evmorfia</h2>#}
+
+                        <div class="row" style="...">
+                            <div class="col-md-12">
+                                <div id="charttimelinediv" style="width: 100%; height: 500px; "></div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 report-item">
+                        {#                <h2>This area should be filled with Kibana - evmorfia</h2>#}
+
+                        <div class="row" style="...">
+                            <div class="col-md-12">
+                                <div id="nounwordcloud" style="width: 100%; height: 500px; "></div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <!-- gallery -->
+
+    <script src="{% static 'anlzer/js/jquery.knob.js' %}"></script>
+    <script src="{% static 'anlzer/js/icheck.min.js' %}"></script>
+    <script src="{% static 'anlzer/js/bootstrap-switch.min.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/overview.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/chart-area-overview.js' %}"></script>
+    <script src="{% static 'anlzer/js/jquery.blueimp-gallery.min.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/amcharts/amcharts.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/amcharts/pie.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/amcharts/serial.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/amcharts/dark.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/amcharts/light.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/amcharts/light-emo.js' %}"></script>
+    <script src="{% static 'anlzer/js/app/sentimentcharts.js' %}"></script>
+
+    {#    #}
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="{% static 'anlzer/js/app/d3.layout.cloud.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+
+{% block title %}Anlzer{% endblock %}
+{% block body_class %}projects-page{% endblock %}
+
+{% block css %}
+<!-- page specific stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/projects.scss' %}">
+{% endblock %}
+
+{% block navbar %}{% include 'anlzer/util/non-project-menu.html' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center" style="margin-top: 20%">
+                Oops.. seems like the URL you visited is either misstyped or no longer available
+            </h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

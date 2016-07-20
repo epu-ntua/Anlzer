@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+
+{% block title %}Projects{% endblock %}
+{% block body_class %}projects-page{% endblock %}
+
+{% block css %}
+<!-- page specific stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/projects.scss' %}">
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'anlzer/css/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'anlzer/css/set.css' %}" />
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'anlzer/css/blueimp-gallery.min.css' %}">
+{% endblock %}
+
+{% block navbar %}{% include 'anlzer/util/non-project-menu.html' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <h2 class="text-center col-md-offset-2">
+                Your Active Projects
+                <a href="{% url 'project-create' %}" class="btn anlzer-btn pull-right"><i class="fa fa-plus"></i>Create a Project</a>
+            </h2>
+            <hr/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="works" class="clearfix grid col-md-12">
+            {% for project in object_list %}
+                {% include 'anlzer/projects/list-item.html' %}
+            {% empty %}
+                <h2 class="anlzer-grey">You currently don't have any Projects. Create one by clicking the button above</h2>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<!-- gallery -->
+<script src="{% static 'anlzer/js/jquery.blueimp-gallery.min.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,38 @@
+@import "_forms";
+
+section {
+  margin-bottom: 45px;
+}
+
+#home {
+  h1, h2, h3, h4 {
+    color: $anlzer-yellow;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+  }
+
+  h3 + div {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 17px;
+    line-height: 1.4em;
+    color: grey;
+  }
+  form.register-form {
+    & {
+      padding-top: 50px;
+    }
+
+    button[type="submit"] {
+      margin-top: 25px;
+    }
+
+    .terms-aggreement {
+      font-size: 12px;
+      color: $anlzer-grey;
+      border-radius: 20%;
+      background: white;
+    }
+
+  }
+}

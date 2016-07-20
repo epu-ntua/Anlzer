@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load sass_tags %}
+{% load widget_tweaks %}
+{% load filters %}
+
+{% block title %}Training{% endblock %}
+{% block body_class %}project-training-page{% endblock %}
+
+{% block css %}
+<!-- page specific stylesheet -->
+<link rel="stylesheet" type="text/css" href="{% sass_src 'anlzer/sass/projects.scss' %}">
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'anlzer/css/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'anlzer/css/set.css' %}" />
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'anlzer/css/blueimp-gallery.min.css' %}">
+<!-- css that help with the tokenization of pages and hashtags -->
+<link rel="stylesheet" href="{% static 'anlzer/css/tokenfield-typeahead.css' %}">
+<link rel="stylesheet" href="{% static 'anlzer/css/bootstrap-tokenfield.css' %}">
+
+{% endblock %}
+
+{% block navbar %}
+    {% if request.GET.new|equals:"True" %}
+        {% include 'anlzer/util/non-project-menu.html' %}
+    {% else %}
+        {% with active='training' %}
+            {% include 'anlzer/util/project-menu.html' %}
+        {% endwith %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% with new_project=request.GET.new|equals:"True" %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% if new_project %}
+                <h2 class="text-center col-md-10 col-md-offset-2">
+                        Create a new Project
+                        <a href="{% url 'projects' %}" class="btn anlzer-btn pull-right">Back to Projects</a>
+                </h2>
+
+                <div class="col-md-12">
+                    <div class="stepwizard">
+                        <div class="stepwizard-row">
+                            <div class="stepwizard-step">
+                                <a type="button"  class="btn wizard-btn">1</a>
+                            </div>
+                            <div class="stepwizard-step">
+                                <a type="button"  class="btn wizard-btn active">2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <h2 class="text-center col-md-12">Project's Training</h2>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-10 col-md-offset-1">
+                {% if new_project %}
+                <p>
+                    The best way to increase the accuracy of the results is <strong>Training</strong>. Should you wish, you could import a .CSV file with example phrases that will help the Anlzer deliver more optimized results for your specific project.
+                </p>
+                <p>
+                    An example of such a file is given below:
+                </p>
+                {% else %}
+                    {% for training in project.training.all %}
+                        <p class="training-files col-md-10 col-md-offset-1"><a href="{% url 'project-training-download' project.pk %}?file={{ training.file|get_filename }}">{{ forloop.counter }}.   {{ training.file|get_filename }}</a></p>
+                    {% empty %}
+                        <p>
+                            Remember when we asked you to upload a .csv training file? Well if you changed your mind you' ve come to the right place
+                        </p>
+                    {% endfor %}
+                {% endif %}
+                <!-- if i dont push the text to the left, the spaces will show on different lines -->
+                <textarea rows="5" class="input-lg col-md-10 col-md-offset-1 example-textarea">
+Marina feels jolly, Happy
+It's a great day!, Excited
+Today is Monday, Neutral
+George is crying, Sad
+Mondays suck, Angry
+                </textarea>
+            </div>
+        </div>
+        <form method="post" enctype="multipart/form-data" id="projectTrainingForm" autocomplete="off" class="animated bounceInDown project-training-form anlzer-form text-center col-md-6 col-md-offset-3">
+            {% csrf_token %}
+            <div class="fields-container">
+                <p>
+                    <label class="label-icon"><i class="fa fa-folder-o"></i></label>
+                    {{ form.file|attr:"placeholder: Uploaded File Title" }}
+                    {{ form.file.errors }}
+                </p>
+
+                {% if form.errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="django-form-error">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                {% if new_project %}
+                    <p>If you wish to skip this step, simply click the create button</p>
+                {% endif %}
+
+            </div>
+            <button type="submit" class="btn anlzer-btn text-center"><i class="fa fa-check"></i>{% if new_project %}Create Project{% else %}Train Project{% endif %}</button>
+        </form>
+    </div>
+    {% if not new_project %}
+        <p class="text-center anlzer-yellow small-info-text">** You can train with multiple files by repeating the process for each file</p>
+    {% endif %}
+</div>
+{% endwith %}
+{% endblock %}
+
+{% block js %}
+<!-- wow script -->
+<script src="{% static 'anlzer/js/bootstrap-tokenfield.js' %}"></script>
+{% endblock %}

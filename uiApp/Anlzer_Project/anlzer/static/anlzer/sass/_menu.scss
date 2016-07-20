@@ -1,0 +1,82 @@
+@import "buttons";
+
+.navbar {
+  .container {
+
+    .active-project {
+      & {
+          float: left;
+          padding: 25px;
+          width: 37%;
+          height: 100%;
+          min-height: 85px;
+          display: inline-block;
+      }
+
+      .title {
+        & {
+          text-align: center;
+          font-size: 22px;
+          font-weight: normal;
+          padding: 10px 0;
+          display: block;
+          color: $anlzer-yellow;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &:hover {
+          color: $anlzer-yellow-hover;
+        }
+      }
+    }
+
+    .login {
+      @extend .anlzer-btn
+    }
+
+
+    .seperating-or {
+      & {
+        line-height: 3.6em;
+        color: $anlzer-grey;
+      }
+
+      & + div,
+      & + span,
+      & + a {
+        display: inline-block;
+      }
+    }
+
+    .dropdown-menu {
+      & {
+        background: white;
+        margin-right: 13px;
+        margin-top: 5px;
+        border-radius: 5px;
+      }
+
+      li a {
+        & {
+          color: $anlzer-grey;
+          font-size: 1.1em;
+          line-height: 2.2em;
+        }
+
+        &:hover {
+          color: black;
+          background: inherit;
+        }
+      }
+    }
+  }
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-nav > li > a:hover {
+  background-color: $anlzer-yellow !important;
+  color: white !important;
+}

@@ -1,0 +1,61 @@
+@import "_forms";
+
+.login-form {
+    & {
+      width: 50%;
+      margin: 10vh 25%;
+      padding-top: 25px;
+      border-radius: 5px;
+      background: #f7f7f7;
+    }
+
+    .row {
+      line-height: 1.2em;
+    }
+
+    .fields-container {
+      padding: 0 15%;
+    }
+
+    .logo {
+      & {
+        margin: 15px 0 45px 0;
+      }
+
+      a,
+      a:hover {
+        border: none;
+      }
+    }
+
+    input, select, textarea {
+      &:-webkit-autofill,
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow:0 0 0 50px whitesmoke inset !important;
+      }
+    }
+
+    .dark {
+      & {
+        background: #ddd;
+        border-top: 1px solid white;
+        color: white;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        min-height: 65px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin: 0;
+        font-size: 20px;
+      }
+    }
+
+    a {
+      color: $anlzer-yellow;
+    }
+
+    a:hover {
+      color: $anlzer-yellow-hover;
+      border-bottom: 1px solid;
+    }
+}

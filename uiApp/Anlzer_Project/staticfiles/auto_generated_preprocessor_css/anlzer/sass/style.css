@@ -1,0 +1,465 @@
+/* variable definition */
+/* variable definition */
+/* variable definition */
+form.anlzer-form input,
+form.anlzer-form textarea,
+form.anlzer-form select {
+  outline: 0;
+  border: none;
+  background: transparent;
+  box-shadow: 0 0 0 0;
+  border-bottom: 1px solid #C1C1C1 !important;
+  border-radius: 0;
+  color: grey;
+  font-weight: 300;
+  font-size: 20px;
+  overflow: hidden; }
+
+form.anlzer-form input:active, form.anlzer-form input:focus,
+form.anlzer-form textarea:active,
+form.anlzer-form textarea:focus,
+form.anlzer-form select:active,
+form.anlzer-form select:focus {
+  outline: none; }
+
+form.anlzer-form input:-webkit-autofill, form.anlzer-form input:-webkit-autofill:focus,
+form.anlzer-form textarea:-webkit-autofill,
+form.anlzer-form textarea:-webkit-autofill:focus,
+form.anlzer-form select:-webkit-autofill,
+form.anlzer-form select:-webkit-autofill:focus {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px white inset;
+  color: grey; }
+
+form.anlzer-form input[type=file],
+form.anlzer-form textarea[type=file],
+form.anlzer-form select[type=file] {
+  display: inline-block; }
+
+form.anlzer-form .label-icon {
+  margin-right: 25px;
+  border: 1px solid #C1C1C1;
+  border-radius: 50%;
+  padding: 8px 16px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+form.anlzer-form .label-icon.focus {
+  border-color: #099e6e;
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none; }
+
+form.anlzer-form .label-icon i.fa {
+  color: #999; }
+
+form.anlzer-form ul.errorlist li,
+form.anlzer-form .django-form-error {
+  color: #D90000;
+  list-style: none; }
+
+form.anlzer-form select:not([multiple]) {
+  width: 260px;
+  color: #333333; }
+
+form.anlzer-form select:not([multiple]) option {
+  color: #333333; }
+
+form.anlzer-form select:not([multiple]) option:focus, form.anlzer-form select:not([multiple]) option:active, form.anlzer-form select:not([multiple]) option:visited, form.anlzer-form select:not([multiple]) option:checked {
+  background: #099e6e;
+  color: white; }
+
+form.anlzer-form select[multiple],
+form.anlzer-form select[multiple].input-lg,
+form.anlzer-form ul.ul-from-select {
+  border: none;
+  height: 70px;
+  padding-bottom: 10px; }
+
+form.anlzer-form select[multiple] li,
+form.anlzer-form select[multiple] option,
+form.anlzer-form select[multiple].input-lg li,
+form.anlzer-form select[multiple].input-lg option,
+form.anlzer-form ul.ul-from-select li,
+form.anlzer-form ul.ul-from-select option {
+  color: #444;
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #099e6e;
+  background: white;
+  margin-right: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; }
+
+form.anlzer-form select[multiple] li:last-of-type,
+form.anlzer-form select[multiple] option:last-of-type,
+form.anlzer-form select[multiple].input-lg li:last-of-type,
+form.anlzer-form select[multiple].input-lg option:last-of-type,
+form.anlzer-form ul.ul-from-select li:last-of-type,
+form.anlzer-form ul.ul-from-select option:last-of-type {
+  margin-right: 0; }
+
+form.anlzer-form select[multiple] li:hover,
+form.anlzer-form select[multiple] option:hover,
+form.anlzer-form select[multiple].input-lg li:hover,
+form.anlzer-form select[multiple].input-lg option:hover,
+form.anlzer-form ul.ul-from-select li:hover,
+form.anlzer-form ul.ul-from-select option:hover {
+  background: #099e6e;
+  color: white; }
+
+form.anlzer-form select[multiple] li:focus, form.anlzer-form select[multiple] li:active, form.anlzer-form select[multiple] li:visited, form.anlzer-form select[multiple] li:checked, form.anlzer-form select[multiple] li[data-selected="selected"], form.anlzer-form select[multiple] li.active-select,
+form.anlzer-form select[multiple] option:focus,
+form.anlzer-form select[multiple] option:active,
+form.anlzer-form select[multiple] option:visited,
+form.anlzer-form select[multiple] option:checked,
+form.anlzer-form select[multiple] option[data-selected="selected"],
+form.anlzer-form select[multiple] option.active-select,
+form.anlzer-form select[multiple].input-lg li:focus,
+form.anlzer-form select[multiple].input-lg li:active,
+form.anlzer-form select[multiple].input-lg li:visited,
+form.anlzer-form select[multiple].input-lg li:checked,
+form.anlzer-form select[multiple].input-lg li[data-selected="selected"],
+form.anlzer-form select[multiple].input-lg li.active-select,
+form.anlzer-form select[multiple].input-lg option:focus,
+form.anlzer-form select[multiple].input-lg option:active,
+form.anlzer-form select[multiple].input-lg option:visited,
+form.anlzer-form select[multiple].input-lg option:checked,
+form.anlzer-form select[multiple].input-lg option[data-selected="selected"],
+form.anlzer-form select[multiple].input-lg option.active-select,
+form.anlzer-form ul.ul-from-select li:focus,
+form.anlzer-form ul.ul-from-select li:active,
+form.anlzer-form ul.ul-from-select li:visited,
+form.anlzer-form ul.ul-from-select li:checked,
+form.anlzer-form ul.ul-from-select li[data-selected="selected"],
+form.anlzer-form ul.ul-from-select li.active-select,
+form.anlzer-form ul.ul-from-select option:focus,
+form.anlzer-form ul.ul-from-select option:active,
+form.anlzer-form ul.ul-from-select option:visited,
+form.anlzer-form ul.ul-from-select option:checked,
+form.anlzer-form ul.ul-from-select option[data-selected="selected"],
+form.anlzer-form ul.ul-from-select option.active-select {
+  background: #099e6e;
+  color: white; }
+
+form.anlzer-form select[multiple] li[data-selected="selected"]:hover, form.anlzer-form select[multiple] li.active-select:hover,
+form.anlzer-form select[multiple] option[data-selected="selected"]:hover,
+form.anlzer-form select[multiple] option.active-select:hover,
+form.anlzer-form select[multiple].input-lg li[data-selected="selected"]:hover,
+form.anlzer-form select[multiple].input-lg li.active-select:hover,
+form.anlzer-form select[multiple].input-lg option[data-selected="selected"]:hover,
+form.anlzer-form select[multiple].input-lg option.active-select:hover,
+form.anlzer-form ul.ul-from-select li[data-selected="selected"]:hover,
+form.anlzer-form ul.ul-from-select li.active-select:hover,
+form.anlzer-form ul.ul-from-select option[data-selected="selected"]:hover,
+form.anlzer-form ul.ul-from-select option.active-select:hover {
+  background: #0aaa76 !important;
+  background-color: #0aaa76 !important;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.38), inset 0 0 6px rgba(0, 0, 0, 0.48); }
+
+form.anlzer-form select:-internal-list-box option:checked {
+  background-color: #099e6e !important; }
+
+form.anlzer-form .help-text {
+  font-size: 12px;
+  color: #099e6e; }
+
+form.anlzer-form .bootstrap-switch,
+form.anlzer-form .bootstrap-switch-handle-off,
+form.anlzer-form .bootstrap-switch-handle-off:focus,
+form.anlzer-form .bootstrap-switch:focus {
+  border: none;
+  outline: none; }
+
+form.anlzer-form .bootstrap-switch.bootstrap-switch-wrapper {
+  margin-left: 30px;
+  margin-right: 85px; }
+
+form.anlzer-form .bootstrap-switch.bootstrap-switch-focused {
+  box-shadow: none; }
+
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+  color: #fff;
+  background: #099e6e; }
+
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
+form.anlzer-form .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+  color: #000;
+  background: #bbb; }
+
+.container .nav.navbar-nav .btn.anlzer-btn, .navbar .container .nav.navbar-nav .btn.login {
+  margin: 25px 15px 0 45px; }
+
+.container .btn.anlzer-btn, .navbar .container .btn.login,
+.btn.anlzer-btn,
+.navbar .container .btn.login {
+  margin: 5px 25px;
+  background: #099e6e;
+  background-color: #099e6e;
+  padding: 10px 20px;
+  line-height: 1em;
+  border-radius: 3px;
+  color: white;
+  text-transform: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.38); }
+
+.container .btn.anlzer-btn:focus, .navbar .container .btn.login:focus, .container .btn.anlzer-btn:active, .navbar .container .btn.login:active, .container .btn.anlzer-btn:hover, .navbar .container .btn.login:hover,
+.btn.anlzer-btn:focus,
+.navbar .container .btn.login:focus,
+.btn.anlzer-btn:active,
+.navbar .container .btn.login:active,
+.btn.anlzer-btn:hover,
+.navbar .container .btn.login:hover {
+  background: #0aaa76 !important;
+  background-color: #0aaa76 !important;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.38), inset 0 0 6px rgba(0, 0, 0, 0.2); }
+
+.container .btn.anlzer-btn i.fa, .navbar .container .btn.login i.fa,
+.btn.anlzer-btn i.fa, .navbar .container .btn.login i.fa {
+  margin-right: 10px; }
+
+.container .btn.anlzer-btn.btn-default, .navbar .container .btn.btn-default.login,
+.btn.anlzer-btn.btn-default,
+.navbar .container .btn.btn-default.login {
+  border: none;
+  background: #999; }
+
+.navbar .container .active-project {
+  float: left;
+  padding: 25px;
+  width: 37%;
+  height: 100%;
+  min-height: 85px;
+  display: inline-block; }
+
+.navbar .container .active-project .title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: normal;
+  padding: 10px 0;
+  display: block;
+  color: #099e6e;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.navbar .container .active-project .title:hover {
+  color: #0aaa76; }
+
+.navbar .container .seperating-or {
+  line-height: 3.6em;
+  color: #999; }
+
+.navbar .container .seperating-or + div,
+.navbar .container .seperating-or + span,
+.navbar .container .seperating-or + a {
+  display: inline-block; }
+
+.navbar .container .dropdown-menu {
+  background: white;
+  margin-right: 13px;
+  margin-top: 5px;
+  border-radius: 5px; }
+
+.navbar .container .dropdown-menu li a {
+  color: #999;
+  font-size: 1.1em;
+  line-height: 2.2em; }
+
+.navbar .container .dropdown-menu li a:hover {
+  color: black;
+  background: inherit; }
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-nav > li > a:hover {
+  background-color: #099e6e !important;
+  color: white !important; }
+
+/* variable definition */
+body footer,
+body div.footer {
+  position: relative;
+  bottom: -5px; }
+
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100vw; }
+
+html #home .container:first-of-type, body #home .container:first-of-type {
+  min-height: 64vh; }
+
+html .anlzer-yellow, body .anlzer-yellow {
+  color: #099e6e !important; }
+
+html a.anlzer-yellow:hover, body a.anlzer-yellow:hover {
+  color: #0aaa76 !important; }
+
+html .anlzer-whitesmoke, body .anlzer-whitesmoke {
+  color: whitesmoke !important; }
+
+html .anlzer-grey, body .anlzer-grey {
+  color: #999 !important; }
+
+html .anlzer-green, body .anlzer-green {
+  color: #2CC311 !important; }
+
+html .anlzer-red, body .anlzer-red {
+  color: #D90000 !important; }
+
+html .anlzer-white, body .anlzer-white {
+  color: white !important; }
+
+html .anlzer-lightgrey, body .anlzer-lightgrey {
+  color: lightgrey !important; }
+
+html .anlzer-bg-danger, html .container .btn.anlzer-btn.anlzer-bg-danger, .container html .btn.anlzer-btn.anlzer-bg-danger, html .navbar .container .btn.anlzer-bg-danger.login, .navbar .container html .btn.anlzer-bg-danger.login, html
+.btn.anlzer-btn.anlzer-bg-danger, body .anlzer-bg-danger, body .container .btn.anlzer-btn.anlzer-bg-danger, .container body .btn.anlzer-btn.anlzer-bg-danger, body .navbar .container .btn.anlzer-bg-danger.login, .navbar .container body .btn.anlzer-bg-danger.login, body
+.btn.anlzer-btn.anlzer-bg-danger {
+  background: #810707 !important;
+  background-color: #810707 !important; }
+
+html .anlzer-bg-danger:hover, html .navbar .container .btn.anlzer-bg-danger.login:hover, .navbar .container html .btn.anlzer-bg-danger.login:hover, html
+.btn.anlzer-btn.anlzer-bg-danger:hover, html .anlzer-bg-danger:active, html .navbar .container .btn.anlzer-bg-danger.login:active, .navbar .container html .btn.anlzer-bg-danger.login:active, html
+.btn.anlzer-btn.anlzer-bg-danger:active, html .anlzer-bg-danger:focus, html .navbar .container .btn.anlzer-bg-danger.login:focus, .navbar .container html .btn.anlzer-bg-danger.login:focus, html
+.btn.anlzer-btn.anlzer-bg-danger:focus, body .anlzer-bg-danger:hover, body .navbar .container .btn.anlzer-bg-danger.login:hover, .navbar .container body .btn.anlzer-bg-danger.login:hover, body
+.btn.anlzer-btn.anlzer-bg-danger:hover, body .anlzer-bg-danger:active, body .navbar .container .btn.anlzer-bg-danger.login:active, .navbar .container body .btn.anlzer-bg-danger.login:active, body
+.btn.anlzer-btn.anlzer-bg-danger:active, body .anlzer-bg-danger:focus, body .navbar .container .btn.anlzer-bg-danger.login:focus, .navbar .container body .btn.anlzer-bg-danger.login:focus, body
+.btn.anlzer-btn.anlzer-bg-danger:focus {
+  background: #900909 !important;
+  background-color: #900909 !important; }
+
+html .anlzer-bg-default, html .container .btn.anlzer-btn.anlzer-bg-default, .container html .btn.anlzer-btn.anlzer-bg-default, html .navbar .container .btn.anlzer-bg-default.login, .navbar .container html .btn.anlzer-bg-default.login, html
+.btn.anlzer-btn.anlzer-bg-default, body .anlzer-bg-default, body .container .btn.anlzer-btn.anlzer-bg-default, .container body .btn.anlzer-btn.anlzer-bg-default, body .navbar .container .btn.anlzer-bg-default.login, .navbar .container body .btn.anlzer-bg-default.login, body
+.btn.anlzer-btn.anlzer-bg-default {
+  background: whitesmoke !important;
+  background-color: whitesmoke !important; }
+
+html .anlzer-bg-default:hover, html .navbar .container .btn.anlzer-bg-default.login:hover, .navbar .container html .btn.anlzer-bg-default.login:hover, html
+.btn.anlzer-btn.anlzer-bg-default:hover, html .anlzer-bg-default:active, html .navbar .container .btn.anlzer-bg-default.login:active, .navbar .container html .btn.anlzer-bg-default.login:active, html
+.btn.anlzer-btn.anlzer-bg-default:active, html .anlzer-bg-default:focus, html .navbar .container .btn.anlzer-bg-default.login:focus, .navbar .container html .btn.anlzer-bg-default.login:focus, html
+.btn.anlzer-btn.anlzer-bg-default:focus, body .anlzer-bg-default:hover, body .navbar .container .btn.anlzer-bg-default.login:hover, .navbar .container body .btn.anlzer-bg-default.login:hover, body
+.btn.anlzer-btn.anlzer-bg-default:hover, body .anlzer-bg-default:active, body .navbar .container .btn.anlzer-bg-default.login:active, .navbar .container body .btn.anlzer-bg-default.login:active, body
+.btn.anlzer-btn.anlzer-bg-default:active, body .anlzer-bg-default:focus, body .navbar .container .btn.anlzer-bg-default.login:focus, .navbar .container body .btn.anlzer-bg-default.login:focus, body
+.btn.anlzer-btn.anlzer-bg-default:focus {
+  background: whitesmoke !important;
+  background-color: whitesmoke !important; }
+
+html .anlzer-bg-default.btn, html .container .btn.anlzer-btn.anlzer-bg-default, .container html .btn.anlzer-btn.anlzer-bg-default, html .navbar .container .btn.anlzer-bg-default.login, .navbar .container html .btn.anlzer-bg-default.login, html
+.btn.anlzer-btn.anlzer-bg-default, body .anlzer-bg-default.btn, body .container .btn.anlzer-btn.anlzer-bg-default, .container body .btn.anlzer-btn.anlzer-bg-default, body .navbar .container .btn.anlzer-bg-default.login, .navbar .container body .btn.anlzer-bg-default.login, body
+.btn.anlzer-btn.anlzer-bg-default {
+  color: #666 !important;
+  font-weight: normal; }
+
+html .anlzer-bg-grey, body .anlzer-bg-grey {
+  background: #999 !important;
+  background-color: #999 !important; }
+
+html .anlzer-bg-grey:hover, html .anlzer-bg-grey:active, html .anlzer-bg-grey:focus, body .anlzer-bg-grey:hover, body .anlzer-bg-grey:active, body .anlzer-bg-grey:focus {
+  background: #aaa !important;
+  background-color: #aaa !important; }
+
+html .font-20, body .font-20 {
+  font-size: 20px; }
+
+html .small-info-text,
+html p.small-info-text, body .small-info-text,
+body p.small-info-text {
+  margin-top: 30px;
+  font-size: 13px; }
+
+html .modal-content, body .modal-content {
+  background: rgba(28, 28, 28, 0.94);
+  color: #C1C1C1; }
+
+html .modal-footer, body .modal-footer {
+  border-color: #2C2C2C; }
+
+button,
+select,
+select option {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  outline: none !important; }
+
+a:hover,
+a:focus,
+a:hover {
+  text-decoration: none; }
+
+.glyphicon-chevron-left:before {
+  content: ''; }
+
+.glyphicon-chevron-right:before {
+  content: ''; }
+
+.success-btn {
+  color: white;
+  background: #099e6e;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 46px;
+  border: transparent;
+  font-size: 20px; }
+
+.success-btn:active, .success-btn:focus {
+  outline: 0; }
+
+.success-btn:hover {
+  background: #0aaa76; }
+
+.example-textarea {
+  background: rgba(255, 255, 255, 0.1);
+  color: #099e6e;
+  outline: none;
+  overflow: hidden;
+  margin-bottom: 30px;
+  font-size: 15px; }
+
+ul.messages {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  list-style: none;
+  display: none;
+  padding: 25px;
+  background: #099e6e;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 18px;
+  margin-left: 20%;
+  color: white; }
+
+ul.messages .success {
+  color: white; }
+
+ul.messages .error {
+  color: darkred; }
+
+.navbar-brand img {
+  height: 75px;
+  margin-top: -10px; }
+
+.nav.nav-tabs {
+  margin-top: 5%; }
+
+.nav.nav-tabs li.active > a,
+.nav.nav-tabs li.active > a:hover,
+.nav.nav-tabs li.active > a:focus {
+  color: #986605; }
+
+.nav.nav-tabs a {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5); }
+
+/*# sourceMappingURL=/static/anlzer/sass/style.css.map */

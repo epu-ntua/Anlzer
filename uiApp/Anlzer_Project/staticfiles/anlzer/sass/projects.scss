@@ -1,0 +1,143 @@
+@import "variables";
+@import "_step-wizard.scss";
+@import "_forms.scss";
+
+body.projects-page,
+body.project-creation-page,
+body.project-training-page,
+body.project-update-page {
+
+  & {
+    background: url(../img/lab.jpg) right no-repeat fixed #fff;
+    background-color: grey;
+    background-blend-mode: multiply;
+  }
+
+  .container {
+    .row:first-child {
+      &, h1, h2, h3, h4 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        color: $anlzer-yellow;
+      }
+    }
+
+    form.anlzer-form input,
+    form.anlzer-form textarea,
+    form.anlzer-form select {
+      color: whitesmoke;
+    }
+
+    .row {
+
+      .grid figure {
+        & {
+          overflow-y: hidden;
+          max-height: 300px;
+          transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        }
+
+        &:hover {
+          h4, h6{
+            display: none;
+          }
+
+          p {
+            span {
+              max-height: 110px;
+              overflow-y: hidden;
+              text-overflow: ellipsis;
+              display: block;
+            }
+
+            a {
+              margin-top: 0 !important;
+            }
+          }
+
+        }
+
+        h4 {
+          margin-top: 10%;
+          font-size: 25px;
+          text-transform: capitalize;
+          color: $anlzer-yellow-hover;
+          max-height: 95px;
+          overflow-y: hidden;
+          text-overflow: ellipsis;
+
+          -webkit-transition: margin-top 0.4s ease-in;
+          -moz-transition: margin-top 0.4s ease-in;
+          -ms-transition: margin-top 0.4s ease-in;
+          -o-transition: margin-top 0.4s ease-in;
+          transition: margin-top 0.4s ease-in;
+        }
+
+        h6 {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 15%;
+        }
+
+      }
+      .project-teaser {
+        & {
+          height: 240px;
+          background: rgba(255, 255, 255, 0.4);
+          background-clip: content-box;
+          cursor: pointer;
+
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -ms-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+
+      }
+
+      .training-files {
+        & {
+          padding: 10px;
+          background: $anlzer-opac-white;
+          cursor: pointer;
+          margin-bottom: 10px;
+
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -ms-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:last-of-type {
+          margin-bottom: 1.7em;
+        }
+
+        &:hover {
+          background: $anlzer-opac-white-hover;
+        }
+
+        a {
+          color: inherit
+        }
+
+        a:hover {
+          color: $anlzer-yellow-hover;
+        }
+      }
+    }
+  }
+
+  form.anlzer-form .label-icon i.fa {
+      color: white;
+  }
+}
+
+body.project-training-page {
+  p {
+    font-size: 16px;
+    color: white;
+  }
+}
